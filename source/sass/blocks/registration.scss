@@ -1,0 +1,139 @@
+/* ==========================================================================
+   Регистрация на сайте
+   ========================================================================== */
+
+.registration {
+  position: relative;
+  z-index: 5;
+
+  margin-top: -30px;
+  padding-top: 100px;
+  padding-bottom: 29px;
+
+  background-color: $blue-color;
+  border-radius: 0 0 30px 30px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: -50px;
+    padding-top: 120px;
+    padding-bottom: 60px;
+
+    border-radius: 0 0 60px 60px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: 153px;
+    padding-bottom: 103px;
+  }
+}
+
+/* Меню с миниатюрой */
+.registration .thumb-menu__item,
+.registration .thumb-menu__link {
+  color: $yellow-color;
+}
+
+.registration .thumb-menu__link:hover,
+.registration .thumb-menu__link:focus {
+  color: $yellow-color--dark;
+}
+
+.registration .thumb-menu__link:active {
+  color: rgba($yellow-color--dark, 0.3);
+}
+
+/* Обертка */
+.registration__wrapp {
+  box-sizing: border-box;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0 35px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 0 73px;
+  }
+}
+
+/* Информационный блок */
+.registration__page-info {
+  margin-bottom: 30px;
+  padding: 0 25px;
+
+  &:last-of-type {
+    margin-bottom: 18px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 65px;
+    padding: 0;
+
+    &:last-of-type {
+      margin-bottom: 43px;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 60px;
+
+    &:last-of-type {
+      margin-bottom: 46px;
+    }
+  }
+}
+
+/* Перенос */
+.registration__page-info br:first-of-type {
+  @media (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+/* Скрываем на мобильных */
+.registration__page-info .mobile-hidden {
+  display: none;
+
+  @media (min-width: $breakpoint-desktop) {
+    display: inline;
+  }
+}
+
+/* Скрываем на десктопе */
+.registration__page-info .desktop-hidden {
+  @media (min-width: $breakpoint-desktop) {
+    display: none;
+  }
+}
+
+/* Регистрационная форма */
+.registration__form {
+  margin-bottom: 28px;
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 81px;
+    margin-bottom: 57px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 65px;
+  }
+}
+
+/* Обертка для меню с миниатюрой */
+.registration__contact-menu {
+  @media (min-width: $breakpoint-desktop) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.registration__contact-menu .thumb-menu__item {
+  @media (min-width: $breakpoint-desktop) {
+    margin-right: 110px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

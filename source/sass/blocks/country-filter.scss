@@ -1,0 +1,552 @@
+/* ==========================================================================
+   Фильтр по странам
+   ========================================================================== */
+
+.country-filter {
+  margin-bottom: 23px;
+  padding-top: 17px;
+
+  background-color: #e2e5f2;
+  border-radius: 0 0 20px 20px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 45px;
+    padding-top: 55px;
+    padding-bottom: 56px;
+
+    border-radius: 0 0 60px 60px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 77px;
+  }
+}
+
+/* Обертка */
+.country-filter__main-wrapp {
+  box-sizing: border-box;
+}
+
+/* Фильтр открыт */
+.country-filter__main-wrapp--open {
+  padding-bottom: 27px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-bottom: 19px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-bottom: 18px;
+  }
+}
+
+/* Фильтрация по континентам */
+.country-filter__continent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (min-width: $breakpoint-desktop) {
+    justify-content: flex-start;
+  }
+}
+
+/* Фильтр закрыт */
+.country-filter__main-wrapp--close .country-filter__continent {
+  padding-bottom: 14px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-bottom: 0;
+  }
+}
+
+/* Фильтр открыт */
+.country-filter__main-wrapp--open .country-filter__continent {
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 71px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 58px;
+  }
+}
+
+/* Заголовок сеции фильтр */
+.country-filter__continent-title {
+  position: relative;
+
+  max-width: 225px;
+  margin: 0;
+  padding-left: 28px;
+
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: 700;
+  color: $blue-color;
+  text-transform: uppercase;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: none;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    display: flex;
+    max-width: 300px;
+    margin-left: 20px;
+    margin-right: 39px;
+    padding-left: 44px;
+  }
+}
+
+/* Миниатюра заголовка */
+.country-filter__continent-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  width: 15px;
+  height: 10px;
+
+  background: url("../img/icons/filter.svg") no-repeat;
+  transform: translateY(-50%);
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 23px;
+    height: 16px;
+  }
+}
+
+/* Список континентов */
+.country-filter__continent-list {
+  @include reset-ul;
+  order: 3;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  margin-left: 25px;
+
+  @media (min-width: $breakpoint-tablet) {
+    order: 0;
+    display: flex;
+    flex-direction: row;
+    width: 410px;
+    margin: 0;
+    margin-left: 35px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-left: 0;
+  }
+}
+
+/* Фильтр закрыт */
+.country-filter__main-wrapp--close .country-filter__continent-list {
+  display: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+  }
+}
+
+/* Элементы списка */
+.country-filter__continent-item {
+  margin-bottom: 5px;
+
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: 700;
+  color: rgba($blue-color, 0.3);
+  text-transform: uppercase;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 0;
+    margin-right: 27px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-right: 27px;
+  }
+}
+
+/* Названия континентов */
+.country-filter__continent-link {
+  color: rgba($blue-color, 0.3);
+  text-decoration: none;
+}
+
+/* Различное состояние у названий континентов */
+.country-filter__continent-link:hover,
+.country-filter__continent-link:focus {
+  color: rgba($blue-color, 0.6);
+}
+
+.country-filter__continent-item--active .country-filter__continent-link,
+.country-filter__continent-link:active {
+  color: $blue-color;
+}
+
+/* Кнопка показать все */
+.country-filter__continent-button {
+  position: relative;
+
+  width: 17px;
+  height: 12px;
+  margin-right: 2px;
+  padding: 10px;
+
+  font-weight: 700;
+  color: $blue-color;
+  text-transform: uppercase;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 175px;
+    height: auto;
+    margin-right: 35px;
+    padding: 0;
+    padding-right: 30px;
+
+    font-size: 20px;
+    line-height: 24px;
+    text-align: left;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-left: auto;
+    margin-right: 64px;
+  }
+}
+
+/* Декоративный элемент у кнопки */
+.country-filter__continent-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 17px;
+  height: 12px;
+
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transform: translate(-50%, -50%);
+
+  @media (min-width: $breakpoint-tablet) {
+    left: auto;
+    right: -12px;
+
+    width: 27px;
+    height: 18px;
+  }
+}
+
+/* Декоративный элемент у кнопки в виде точек */
+.country-filter__main-wrapp--close .country-filter__continent-button::after {
+  background-image: url("../img/icons/dots.svg");
+}
+
+/* Декоративный элемент у кнопки в виде крестика */
+.country-filter__main-wrapp--open .country-filter__continent-button::after {
+  background-image: url("../img/icons/filter-close.svg");
+}
+
+/* Скрываем показываем подпись кнопки */
+.country-filter__continent-button .visually-hidden {
+  @media (min-width: $breakpoint-tablet) {
+    @include visually-show;
+  }
+}
+
+/* Обертка списка стран */
+.country-filter__country {
+  position: relative;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-left: 30px;
+    margin-bottom: 74px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-left: 66px;
+    margin-bottom: 27px;
+  }
+}
+
+/* Фильтр закрыт */
+.country-filter__main-wrapp--close .country-filter__country {
+  display: none;
+}
+
+
+/* Фильтр открыт */
+.country-filter__main-wrapp--open .country-filter__country {
+  display: block;
+}
+
+/* Спиисок стран */
+.country-filter__country-list {
+  @include reset-ul;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 25px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 370px;
+    margin: 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: auto;
+    justify-content: space-between;
+  }
+}
+
+/* Элементы списка стран */
+.country-filter__country-item {
+  font-size: 14px;
+  line-height: 18px;
+  color: $blue-color--light;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-right: 35px;
+    margin-bottom: 42px;
+
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 700;
+    color: $blue-color;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 182px;
+    margin-right: 25px;
+    margin-bottom: 65px;
+
+    color: $blue-color;
+  }
+}
+
+/* Убираем отступы */
+.country-filter__country-item:nth-of-type(5n) {
+  @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+    margin-right: 0;
+  }
+}
+
+/* Убираем отступы у самых последних 5 элементов списка */
+.country-filter__country-item:nth-last-child(-n+5) {
+  @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+    margin-bottom: 0;
+  }
+}
+
+/* Заглавная буква стран */
+.country-filter__country-letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 42px;
+  margin-top: -1px;
+  margin-left: -1px;
+
+  color: $blue-color--light;
+  text-decoration: none;
+
+  background-color: $white-color;
+  border: 1px solid #cbced9;
+
+  @media (min-width: $breakpoint-tablet) {
+    color: rgba($blue-color, 0.2);
+
+    background-color: transparent;
+    border: none;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 35px;
+
+    color: $blue-color;
+  }
+}
+
+/* Различное состояние */
+.country-filter__country-item--active .country-filter__country-letter,
+.country-filter__country-letter:hover,
+.country-filter__country-letter:focus {
+  color: $white-color;
+
+  background-color: $blue-color--light;
+  border: 1px solid $blue-color--light;
+
+  @media (min-width: $breakpoint-tablet) {
+    color: $blue-color;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+/* Список стран */
+.country-filter__country-sublist {
+  @include reset-ul;
+  position: absolute;
+  top: 219px;
+  left: 25px;
+
+  display: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    top: -14px;
+    left: auto;
+    right: 28px;
+
+    width: 182px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    position: static;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Показать страны активной буквы */
+.country-filter__country-item--active .country-filter__country-sublist {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Элементы списка стран */
+.country-filter__country-subitem {
+  font-size: $fz;
+  line-height: $lh;
+  color: $grey-color;
+  font-weight: normal;
+  text-transform: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+/* Название страны */
+.country-filter__country-name {
+  color: $grey-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+/* Свернуть фильтр */
+.country-filter__country-button {
+  position: relative;
+
+  width: 100%;
+  padding: 5px 34px 5px 60px;
+
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 700;
+  color: $blue-color--dark;
+  text-transform: uppercase;
+
+  background-color: #d6daed;
+  border: none;
+  border-radius: 20px;
+
+  &:hover,
+  &:focus {
+    background-color: #c8cee8;
+  }
+
+  &:active {
+    color: rgba($blue-color--dark, 0.3);
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    display: block;
+    width: 617px;
+    margin: 0 auto;
+    padding: 35px;
+    padding-left: 73px;
+
+    font-size: 20px;
+    line-height: 30px;
+    color: $blue-color--light;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 100%;
+  }
+}
+
+/* Фильтр закрыт */
+.country-filter__main-wrapp--close .country-filter__country-button {
+  display: none;
+}
+
+/* Миниатюра у кнопки */
+.country-filter__country-button::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 85px;
+
+  width: 12px;
+  height: 12px;
+
+  background-image: url("../img/icons/close.svg");
+  background-repeat: no-repeat;
+
+  @media (min-width: $breakpoint-tablet) {
+    top: 42px;
+    left: 242px;
+
+    width: 18px;
+    height: 18px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    top: 42px;
+    left: 594px;
+  }
+}
+
+/* Миниатюра у кнопки */
+.country-filter__country-button:active::before {
+  opacity: 0.3;
+}

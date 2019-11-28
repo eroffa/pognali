@@ -1,0 +1,260 @@
+/* ==========================================================================
+   Календарь
+   ========================================================================== */
+
+.calendar {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Верхняя часть шапки с название месяца */
+.calendar__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 11px 0;
+
+  border-top: 1px solid #cbced9;
+  border-bottom: 1px solid #cbced9;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 24px;
+    padding: 25px 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 0;
+  }
+}
+
+/* Стрелки вперед назад */
+.calendar__button {
+  width: 17px;
+  height: 17px;
+  padding: 0;
+
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  opacity: 0.3;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.1;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* Левая стрелка */
+.calendar__button--left {
+  background-image: url("../img/icons/icon-arrow-left.svg");
+  background-position: left;
+
+  @media (min-width: $breakpoint-tablet) {
+    background-position: right;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    background-position: left;
+  }
+}
+
+/* Правая стрелка */
+.calendar__button--right {
+  background-image: url("../img/icons/icon-arrow-right.svg");
+  background-position: right;
+
+  @media (min-width: $breakpoint-tablet) {
+    background-position: left;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    background-position: right;
+  }
+}
+
+/* Название месяца */
+.calendar__title {
+  margin: 0;
+
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 700;
+  color: $blue-color--light;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 36px;
+    line-height: 36px;
+  }
+}
+
+/* Контент календаря */
+.calendar__content {
+  width: 100%;
+  border-collapse: collapse;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 530px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 100%;
+  }
+}
+
+/* Строка календаря */
+.calendar__row {
+  font-size: 14px;
+  line-height: 18px;
+  color: $grey-color;
+}
+
+/* Столбцы календаря */
+.calendar__row th,
+.calendar__row td {
+  width: 30px;
+  height: 31px;
+
+  font-weight: normal;
+  text-align: center;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 75px;
+    height: 69px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 142px;
+    height: 71px;
+    padding-top: 10px;
+    padding-left: 15px;
+
+    text-align: left;
+    vertical-align: top;
+    letter-spacing: 2px;
+  }
+}
+
+/* Столбцы с название недели */
+.calendar__row th {
+  cursor: pointer;
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 40px;
+
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    height: 54px;
+  }
+}
+
+/* Последние 2 столбца с названием недели */
+.calendar__row th:nth-last-child(-n+2) {
+  color: $orange-color--dark;
+}
+
+/* Столбцы с датами */
+.calendar__row td {
+  color: rgba($grey-color, 0.3);
+  border: 1px solid #cbced9;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 20px;
+    line-height: 18px;
+    font-weight: 500;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: normal;
+  }
+}
+
+/* Активные для выбора столбцы */
+.calendar__row .calendar__col {
+  color: $grey-color;
+
+  background-color: $white-color--blue;
+  cursor: pointer;
+}
+
+/* Активные для выбора столбцы выбранные*/
+.calendar__row .calendar__col--chosen {
+  color: $white-color;
+  background-color: #101d41;
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 0;
+  }
+}
+
+/* Обертка */
+.calendar__col--chosen div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid transparent;
+
+  @media (min-width: $breakpoint-desktop) {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 4px;
+    padding-left: 14px;
+
+    line-height: 26px;
+
+    border: 2px solid transparent;
+  }
+}
+
+.calendar__col--chosen:hover div,
+.calendar__col--chosen:focus div,
+.calendar__col--active div {
+  background-color: $blue-color--light;
+  border: 1px solid $orange-color--dark;
+  outline: 1px solid $orange-color--dark;
+
+  @media (min-width: $breakpoint-desktop) {
+    border: 2px solid $orange-color--dark;
+    outline: 2px solid $orange-color--dark;
+  }
+}
+
+/* Описательный текст */
+.calendar__col--chosen span {
+  display: none;
+  line-height: 0;
+
+  @media (min-width: $breakpoint-desktop) {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Название месяца в дате */
+.calendar__month {
+  display: none;
+
+  @media (min-width: $breakpoint-desktop) {
+    display: inline-block;
+  }
+}

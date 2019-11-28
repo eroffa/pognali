@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Переменные
+   ========================================================================== */
+
+/* Цвета
+   ========================================================================== */
+$white-color: #ffffff;
+$white-color--dark: #e5e5e5;
+$white-color--blue: #edeff6;
+$black-color: #000000;
+$grey-color: #444444;
+$grey-color--light: #cccccc;
+
+$blue-color: #192144;
+$blue-color--dark: #161c35;
+$blue-color--dark2: #121936;
+$blue-color--dark3: #141b3b;
+$blue-color--light: #1d2e5b;
+$blue-color--light2: #182044;
+
+$orange-color--dark: #ff5c23;
+$orange-color: #ff8d30;
+$orange-color--light: #ffa530;
+
+$yellow-color--dark: #ffbd30;
+$yellow-color: #ffd74b;
+$yellow-color--light: #ffd64b;
+
+$pink-color: #f97676;
+
+$green-color: #81e31e;
+
+/* Размер шрифтов
+   ========================================================================== */
+$fz: 16px;
+$lh: 22px;
+
+/* Размер контейнера
+   ========================================================================== */
+$width-mobile: 270px;
+$width-tablet: 688px;
+$width-desktop: 1320px;
+
+/* Брекпоинты
+   ========================================================================== */
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1440px;
+
+/* Ретина
+   ========================================================================== */
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

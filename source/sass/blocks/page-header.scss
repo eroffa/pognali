@@ -1,0 +1,373 @@
+/* ==========================================================================
+   Шапка сайта
+   ========================================================================== */
+
+.page-header {
+  position: relative;
+  z-index: 999;
+
+  width: 100%;
+
+  color: $white-color;
+  background-color: $blue-color--dark;
+
+  @media (min-width: $breakpoint-tablet) {
+    background-color: $blue-color--light2;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: 27px;
+    background-color: $blue-color--dark;
+  }
+}
+
+/* При отключенном js */
+.page-header--no-js {
+  color: $blue-color--dark;
+  background-color: $white-color;
+
+  @media (min-width: $breakpoint-desktop) {
+    color: $white-color;
+    background-color: $blue-color--dark;
+  }
+}
+
+/* Меню закрыто */
+.page-header--close {
+  color: $white-color;
+  background-color: $blue-color--dark;
+
+  @media (min-width: $breakpoint-tablet) {
+    background-color: $blue-color--light2;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    background-color: $blue-color--dark;
+  }
+}
+
+/* На внутренних страницах меню закрыто */
+.inner-page .page-header--close {
+  @media (min-width: $breakpoint-tablet) {
+    background-color: $blue-color--dark;
+  }
+}
+
+/* На внутренних страницах меню зафиксировано */
+.inner-page .page-header--fixed {
+  background: $white-color;
+}
+
+/* Меню открыто */
+.page-header--open {
+  position: absolute;
+  //top: -79px;
+
+  color: $blue-color--dark;
+  background-color: $white-color;
+
+  @media (min-width: $breakpoint-tablet) {
+    //top: -132px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    //top: -120px;
+    background-color: $blue-color--dark;
+  }
+}
+
+/* Меню открыто соседняя секция не занимает места свободного потока */
+.page-header--open + .page-main {
+  padding-top: 79px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 138px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: 126px;
+  }
+}
+
+/* Меню зафиксировано */
+.page-header--fixed {
+  position: fixed;
+  top: 0;
+
+  color: $blue-color--dark;
+  background-color: $white-color;
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: 0;
+  }
+}
+
+/* Разный цвет у ссылок при зафиксированом меню */
+.page-header--fixed .site-menu__item,
+.page-header--fixed .site-menu__link {
+  color: $blue-color;
+
+  &:hover,
+  &:focus {
+    color: $yellow-color;
+  }
+
+  &:active {
+    color: rgba($yellow-color, 0.3);
+  }
+}
+
+/* Меню зафиксировано соседняя секция не занимает места свободного потока */
+.page-header--fixed + .page-main {
+  padding-top: 79px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 132px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: 100px;
+  }
+}
+
+/* Меню закрыто и зафиксировано */
+.page-header--close.page-header--fixed {
+  border-bottom: 1px solid $white-color--dark;
+}
+
+/* Меню открыто и зафиксировано */
+.page-header--open.page-header--fixed {
+  @media (min-width: $breakpoint-desktop) {
+    border-bottom: 1px solid $white-color--dark;
+  }
+}
+
+/* Обертка */
+.page-header__wrapp {
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    //min-height: 132px;
+    padding: 41px 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    //min-height: 90px;
+    padding: 20px 0 0;
+  }
+}
+
+.page-header--fixed .page-header__wrapp {
+  @media (min-width: $breakpoint-desktop) {
+    padding: 20px 0;
+  }
+}
+
+/* Обертка для логотипа с кнопки открытия меню */
+.page-header__scroll {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //min-height: 73px;
+  padding: 27px 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 358px;
+    //min-height: 132px;
+    padding: 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    position: relative;
+
+    width: 290px;
+    //min-height: auto;
+  }
+}
+
+.page-header--fixed .page-header__scroll {
+  @media (max-width: $breakpoint-tablet) {
+    padding: 24px 0;
+  }
+}
+
+/* Декоративная линия */
+.page-header__scroll::after {
+  @media (min-width: $breakpoint-desktop) {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+
+    width: 60px;
+    height: 2px;
+
+    background-color: $white-color;
+  }
+}
+
+/* Декоративная линия при зафиксированом меню */
+.page-header--fixed .page-header__scroll::after {
+  @media (min-width: $breakpoint-desktop) {
+    width: 45px;
+    background-color: $blue-color;
+  }
+}
+
+/* Логотип */
+.page-header__logo {
+  display: none;
+}
+
+/* Логотип темный */
+.page-header--no-js .page-header__logo--blue,
+.page-header--fixed .page-header__logo--blue {
+  display: block;
+
+  @media (min-width: $breakpoint-desktop) {
+    display: none;
+  }
+}
+
+/* Логотип светлый */
+.page-header--no-js .page-header__logo--white {
+  @media (min-width: $breakpoint-desktop) {
+    display: block;
+  }
+}
+
+/* Логотип при разном состоянии */
+.page-header--close .page-header__logo--white,
+.page-header--open .page-header__logo--blue {
+  display: block;
+}
+
+.page-header--close .page-header__logo--white,
+.page-header--open .page-header__logo--white {
+  @media (min-width: $breakpoint-desktop) {
+    display: block;
+  }
+}
+
+.page-header--close .page-header__logo--blue,
+.page-header--open .page-header__logo--blue {
+  @media (min-width: $breakpoint-desktop) {
+    display: none;
+  }
+}
+
+.page-header--fixed .page-header__logo--white {
+  display: none;
+}
+
+.page-header--fixed .page-header__logo--blue {
+  @media (min-width: $breakpoint-desktop) {
+    display: block;
+  }
+}
+
+/* Кнопка открытия меню */
+.page-header__toggle {
+  display: none;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+
+  line-height: 0;
+
+  background-color: transparent;
+  border: none;
+}
+
+/* Разное состояние */
+.page-header--close .page-header__toggle--open,
+.page-header--open .page-header__toggle--close {
+  display: block;
+
+  @media (min-width: $breakpoint-desktop) {
+    display: none;
+  }
+}
+
+.page-header--close .page-header__toggle--close,
+.page-header--open .page-header__toggle--open {
+  display: none;
+}
+
+/* Иконка */
+.page-header__toggle-icon {
+  fill: $white-color;
+}
+
+/* Иконка при открытом меню */
+.page-header__toggle--open .page-header__toggle-icon {
+  width: 25px;
+  height: 11px;
+}
+
+/* Иконка при закрытом меню */
+.page-header__toggle--close .page-header__toggle-icon {
+  width: 19px;
+  height: 19px;
+}
+
+.page-header--close .page-header__toggle-icon {
+  fill: $white-color;
+}
+
+.page-header--open .page-header__toggle-icon,
+.page-header--fixed .page-header__toggle-icon {
+  fill: $grey-color--light;
+}
+
+/* Меню с контактами */
+.page-header__contact {
+  display: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    max-width: 195px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    order: 1;
+    max-width: 300px;
+  }
+}
+
+.page-header__contact .contact-btn__item--phone,
+.page-header__contact .contact-btn__item--email {
+  @media (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    display: block;
+  }
+}
+
+/* Навигационное меню */
+.page-header__nav {
+  display: none;
+  width: 100%;
+  padding: 40px 0 35px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 90px 0 43px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    order: 0;
+    display: block;
+    width: 630px;
+    margin-top: 11px;
+    padding: 0;
+  }
+}
+
+.page-header--no-js .page-header__nav,
+.page-header--open .page-header__nav {
+  display: flex;
+}

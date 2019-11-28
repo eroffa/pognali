@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Тултип
+   ========================================================================== */
+
+.tooltip {
+  position: relative;
+  z-index: 10;
+
+  margin: 0;
+}
+
+/* Оцентровка элементов тултипа */
+.tooltip:hover::before,
+.tooltip:hover::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  z-index: 99;
+
+  text-align: center;
+
+  transform: translateX(-50%);
+}
+
+/* Треугольник */
+.tooltip:hover::before {
+  top: 24px;
+
+  width: 0;
+  height: 0;
+
+  border: 8px solid transparent;
+  border-bottom-color: #101d41;
+
+  @media (min-width: $breakpoint-tablet) {
+    top: 44px;
+  }
+}
+
+/* Тело тултипа */
+.tooltip:hover::after {
+  content: attr(data-tooltip);
+  top: 40px;
+
+  padding: 17px 21px;
+
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: normal;
+  color: $white-color;
+
+  background-color: #101d41;
+  border-radius: 3px;
+
+  @media (min-width: $breakpoint-tablet) {
+    top: 60px;
+  }
+}

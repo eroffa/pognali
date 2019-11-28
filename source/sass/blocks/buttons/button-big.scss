@@ -1,0 +1,118 @@
+/* ==========================================================================
+   Кнопки большая
+   ========================================================================== */
+
+.button-big {
+  position: relative;
+
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  padding: 21px 70px 22px 24px;
+
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+  color: $blue-color--light;
+  text-align: left;
+  text-transform: none;
+  text-decoration: none;
+
+  background-color: $yellow-color;
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $yellow-color--dark;
+  }
+
+  &:active {
+    color: rgba($blue-color--dark, 0.3);
+  }
+
+  &--bold {
+    padding-left: 21px;
+    border: 3px solid $blue-color;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 30px 33px 27px;
+
+    font-size: 24px;
+    line-height: 24px;
+
+    border-radius: 20px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 27px 36px 27px;
+  }
+}
+
+.button-big--transparent {
+  padding: 0;
+  padding-left: 35px;
+
+  text-transform: uppercase;
+
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: rgba($blue-color--light, 0.7);
+    background-color: transparent;
+  }
+
+  &:active {
+    color: rgba($blue-color--light, 0.3);
+  }
+}
+
+.button-big__arrow {
+  position: absolute;
+  right: 23px;
+  top: 50%;
+
+  width: 10px;
+  height: 14px;
+
+  transform: translateY(-50%);
+
+  fill: $blue-color--light;
+
+  @media (min-width: $breakpoint-tablet) {
+    right: 37px;
+    top: 50%;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    right: 34px;
+  }
+}
+
+.button-big--bold .button-big__arrow {
+  //right: 20px;
+}
+
+.button-big__arrow--rotate {
+  top: 6px;
+  left: 0;
+  right: auto;
+
+  transform: rotate(180deg);
+}
+
+.button-big:active .button-big__arrow {
+  fill: rgba($blue-color--light, 0.3);
+}
+
+.button-big__text {
+  display: none;
+
+  @media (min-width: $breakpoint-desktop) {
+    display: inline-block;
+  }
+}

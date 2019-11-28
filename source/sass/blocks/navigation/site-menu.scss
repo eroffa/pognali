@@ -1,0 +1,84 @@
+/* ==========================================================================
+   Навигация по сайту
+   ========================================================================== */
+
+/* Список основного меню */
+.site-menu {
+  @include reset-ul;
+
+  @media (min-width: $breakpoint-desktop) {
+    order: -1;
+    display: flex;
+  }
+}
+
+/* Элемент основного меню */
+.site-menu__item {
+  font-size: 30px;
+  line-height: 31px;
+  font-weight: 500;
+  color: $blue-color;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 60px;
+    line-height: 62px;
+    text-align: left;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-right: 34px;
+
+    font-size: 20px;
+    line-height: 30px;
+    color: $white-color;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+/* Ссылка основного меню */
+.site-menu__link {
+  position: relative;
+
+  display: inline-block;
+
+  color: $blue-color;
+  text-decoration: none;
+
+  overflow: hidden;
+
+  &:hover,
+  &:focus {
+    color: $yellow-color;
+  }
+
+  &:active {
+    color: rgba($yellow-color, 0.3);
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    color: $white-color;
+  }
+}
+
+/* Для анимации ссылки */
+.site-menu__link span {
+  display: block;
+  transition: transform 0.3s;
+}
+
+.site-menu__link:hover span {
+  transform: translateY(-100%);
+}
+
+.site-menu__link span::before {
+  content: attr(data-hover);
+  position: absolute;
+  top: 100%;
+
+  transform: translate3d(0, 0, 0);
+}

@@ -1,0 +1,142 @@
+/* ==========================================================================
+   Основной контент
+   ========================================================================== */
+
+.page-main {
+  //
+}
+
+/* Секция с наименование страницы */
+.page-main__head {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 23px;
+
+  background-color: $blue-color--dark;
+  border-radius: 0 0 20px 20px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 84px;
+    border-radius: 0 0 60px 60px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: 115px;
+  }
+}
+
+/* Обертка */
+.page-main__container {
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+/* Название страницы */
+.page-main__title {
+  position: relative;
+
+  display: inline-block;
+  margin: 0;
+  padding-bottom: 12px;
+
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 700;
+  color: $white-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+
+    width: 100%;
+    height: 5px;
+
+    background-color: $orange-color;
+    border-radius: 3px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-left: 35px;
+    padding-bottom: 67px;
+
+    font-size: 60px;
+    line-height: 70px;
+
+    &::before {
+      bottom: -3px;
+      height: 8px;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-left: 67px;
+  }
+}
+
+/* Ссылка на главную страницу */
+.page-main__link {
+  display: none;
+
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  color: $white-color;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: rgba($white-color, 0.6);
+  }
+
+  &:active {
+    color: rgba($white-color, 0.3);
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    position: relative;
+
+    display: block;
+    margin-top: 26px;
+    margin-right: 36px;
+    padding-right: 60px;
+
+    text-align: right;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-right: 64px;
+  }
+}
+
+/* Декоративная стрелка */
+.page-main__link::before {
+  @media (min-width: $breakpoint-tablet) {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    width: 32px;
+    height: 16px;
+
+    background-image: url("../img/icons/return.svg");
+    background-repeat: no-repeat;
+
+    transform: translateY(-50%);
+  }
+}
+
+/* Разное состояние */
+.page-main__link:hover::before,
+.page-main__link:focus::before {
+  opacity: 0.6;
+}
+
+.page-main__link:active::before {
+  opacity: 0.3;
+}

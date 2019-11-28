@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Информационный блок
+   ========================================================================== */
+
+.page-info {
+  box-sizing: border-box;
+  color: $white-color;
+
+  &--light {
+    color: $grey-color;
+  }
+
+  &--center {
+    text-align: center;
+  }
+}
+
+/* Заголовок информационного блока */
+.page-info__title {
+  margin: 0;
+  margin-bottom: 20px;
+
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  color: $orange-color;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 58px;
+
+    font-size: 45px;
+    line-height: 45px;
+  }
+}
+
+/* Текст информационного блока */
+.page-info__text {
+  margin: 0;
+  margin-bottom: 18px;
+
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: 300;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 43px;
+
+    font-size: 28px;
+    line-height: 33px;
+  }
+}
+
+/* Жирный текст информационного блока */
+.page-info__text--bold {
+  font-weight: 700;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 21px;
+    line-height: 25px;
+  }
+}
+
+/* Ссылка информационного блока */
+.page-info__link {
+  color: $yellow-color;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: $orange-color;
+  }
+
+  &:active {
+    color: rgba($orange-color, 0.3);
+  }
+}

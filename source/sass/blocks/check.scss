@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Простой чекбокс
+   ========================================================================== */
+
+.check {
+  display: flex;
+  align-items: center;
+
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: normal;
+  color: $grey-color;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: rgba($grey-color, 0.6);
+  }
+
+  &:active {
+    color: rgba($grey-color, 0.3);
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+/* Неактивный чекбокс */
+input[type="checkbox"]:disabled + .check:hover {
+  cursor: not-allowed;
+}
+
+/* Фон чекбокса */
+.check__box {
+  position: relative;
+
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin-right: 9px;
+
+  background-color: $white-color;
+  border-radius: 3px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Иконка чекбокса */
+.check__svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: none;
+
+  transform: translate(-50%, -50%);
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Отмеченый чекбокс */
+input[type="checkbox"]:checked + .check .check__svg {
+  display: block;
+}
+
+/* Название чекбокса */
+.check__name {
+  font: inherit;
+}
+
+/* Различные сотсояния чекбокса */
+.check:hover .check__box,
+.check:focus .check__box {
+  background-color: rgba($white-color, 0.6);
+}
+
+.check:active .check__box,
+input[type="checkbox"]:disabled + .check .check__box {
+  background-color: rgba($white-color, 0.3);
+}
+
+.check:active .check__svg,
+input[type="checkbox"]:disabled + .check .check__svg {
+  opacity: 0.2;
+}
+
+input[type="checkbox"]:disabled + .check {
+  color: rgba($grey-color, 0.3);
+}

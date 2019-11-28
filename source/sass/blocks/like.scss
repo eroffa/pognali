@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Лайки
+   ========================================================================== */
+
+.like {
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 700;
+  color: $blue-color--dark;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+/* Обертка для иконки с сердечком */
+.like__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 31px;
+  height: 31px;
+  margin: 0;
+  margin-right: 7px;
+
+  background-color: #edeff6;
+  border-radius: 50px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Иконка с сердечком */
+.like__svg {
+  width: 13px;
+  height: 11px;
+
+  fill: rgba($blue-color, 0.3);
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 20px;
+    height: 17px;
+  }
+}
+
+/* Неактивное состояние */
+.like__heart {
+  display: block;
+}
+
+/* Активное состояние */
+.like__heart-active {
+  display: none;
+}
+
+/* Неактивное состояние */
+.like--active .like__heart {
+  display: none;
+}
+
+/* Активное состояние */
+.like--active .like__heart-active {
+  display: block;
+}
+
+/* Различное состояние */
+.like:hover .like__icon,
+.like:focus .like__icon {
+  background-color: #e2e5f2;
+}
+
+.like:hover .like__svg,
+.like:focus .like__svg {
+  fill: rgba($blue-color, 0.5);
+}
+
+.like:active .like__svg {
+  fill: rgba($blue-color, 0.1);
+}
+
+.like--active .like__icon {
+  background-color: #f9eaea;
+}
+
+.like--active:hover .like__icon,
+.like--active:focus .like__icon {
+  background-color: #f9d8d8;
+}
+
+.like--active .like__svg,
+.like--active:hover .like__svg,
+.like--active:focus .like__svg {
+  fill: #f02323;
+}
+
+.like--active:active .like__svg {
+  opacity: 0.3;
+}

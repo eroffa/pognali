@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Значки транспорта на которые можно нажимать
+   ========================================================================== */
+
+/* Список транспортов */
+.transport-action {
+  @include reset-ul;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Тултип обертка */
+.transport-action__tooltip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+
+  background-color: $white-color;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 43px;
+    height: 43px;
+  }
+}
+
+/* Треугольник */
+.transport-action__tooltip:hover::before {
+  top: 24px;
+}
+
+/* Тело тултипа */
+.transport-action__tooltip:hover::after {
+  top: 40px;
+}
+
+.transport-action__tooltip:hover,
+.transport-action__tooltip:focus {
+  box-shadow: 0 2px 10px rgba($black-color, 0.08);
+}
+
+.transport-action__tooltip:active {
+  background-color: #e2e5f1;
+}
+
+/* Иконка */
+.transport-action__svg {
+  fill: rgba($black-color, 0.15);
+}
+
+.transport-action__tooltip:hover .transport-action__svg,
+.transport-action__input:focus + .transport-action__tooltip .transport-action__svg {
+  fill: rgba($black-color, 0.3);
+}
+
+.transport-action__tooltip:active .transport-action__svg {
+  fill: rgba($black-color, 0.1);
+}
+
+/* Иконка активная */
+.transport-action__svg--active,
+.transport-action__input:checked + .transport-action__tooltip .transport-action__svg {
+  fill: $blue-color--light;
+}
+
+.transport-action__input:checked + .transport-action__tooltip:hover .transport-action__svg,
+.transport-action__input:checked + .transport-action__tooltip:focus .transport-action__svg {
+  fill: #101e44;
+}
+
+.transport-action__input:checked + .transport-action__tooltip:active .transport-action__svg {
+  fill: rgba(#101e44, 0.3);
+}
+
+.transport-action__svg--plane {
+  width: 14px;
+  height: 16px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 19px;
+    height: 21px;
+  }
+}
+
+.transport-action__svg--bus {
+  width: 13px;
+  height: 16px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 17px;
+    height: 21px;
+  }
+}
+
+.transport-action__svg--bike {
+  width: 19px;
+  height: 17px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 24px;
+    height: 21px;
+  }
+}
+
+.transport-action__svg--run {
+  width: 15px;
+  height: 17px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 20px;
+    height: 21px;
+  }
+}

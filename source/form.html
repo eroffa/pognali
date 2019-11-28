@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Направления - Сервис совместного путешествия "Погнали"</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="preload" href="fonts/bloggersans.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/bloggersans.woff2" as="font" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body class="inner-page">
+<div class="sprite">
+  <include src="img/sprite.svg"></include>
+</div>
+
+<header class="page-header page-header--no-js">
+  <div class="page-header__wrapp container">
+    <div class="page-header__scroll">
+      <a class="page-header__logo page-header__logo--white logo" href="index.html">
+        <picture>
+          <source type="image/webp" media="(min-width: 1440px)" srcset="img/desktop/logo-desktop-white@1x.webp 1x, img/desktop/logo-desktop-white@2x.webp 2x">
+          <source type="image/webp" media="(min-width: 768px)" srcset="img/tablet/logo-tablet-white@1x.webp 1x, img/tablet/logo-tablet-white@2x.webp 2x">
+          <source type="image/webp" srcset="img/mobile/logo-mobile-white@1x.webp 1x, img/mobile/logo-mobile-white@2x.webp 2x">
+
+          <source media="(min-width: 1440px)" srcset="img/desktop/logo-desktop-white@1x.png 1x, img/desktop/logo-desktop-white@2x.png 2x">
+          <source media="(min-width: 768px)" srcset="img/tablet/logo-tablet-white@1x.png 1x, img/tablet/logo-tablet-white@2x.png 2x">
+          <img class="logo__img" src="img/mobile/logo-mobile-white@1x.png" srcset="img/mobile/logo-mobile-white@2x.png 2x" alt="Логотип Погнали">
+        </picture>
+      </a>
+      <a class="page-header__logo page-header__logo--blue logo" href="index.html">
+        <picture>
+          <source type="image/webp" media="(min-width: 1440px)" srcset="img/desktop/logo-desktop-blue@1x.webp 1x, img/desktop/logo-desktop-blue@2x.webp 2x">
+          <source type="image/webp" media="(min-width: 768px)" srcset="img/tablet/logo-tablet-blue@1x.webp 1x, img/tablet/logo-tablet-blue@2x.webp 2x">
+          <source type="image/webp" srcset="img/mobile/logo-mobile-blue@1x.webp 1x, img/mobile/logo-mobile-blue@2x.webp 2x">
+
+          <source media="(min-width: 1440px)" srcset="img/desktop/logo-desktop-blue@1x.png 1x, img/desktop/logo-desktop-blue@2x.png 2x">
+          <source media="(min-width: 768px)" srcset="img/tablet/logo-tablet-blue@1x.png 1x, img/tablet/logo-tablet-blue@2x.png 2x">
+          <img class="logo__img" src="img/mobile/logo-mobile-blue@1x.png" srcset="img/mobile/logo-mobile-blue@2x.png 2x" alt="Логотип Погнали">
+        </picture>
+      </a>
+      <button class="page-header__toggle page-header__toggle--open">
+        <span class="visually-hidden">Открыть меню</span>
+        <svg class="page-header__toggle-icon" width="25" height="25" role="presentation" aria-label="Открыть меню" aria-hidden="true" focusable="false">
+          <use xlink:href="#icon-menu"></use>
+        </svg>
+      </button>
+      <button class="page-header__toggle page-header__toggle--close">
+        <span class="visually-hidden">Закрыть меню</span>
+        <svg class="page-header__toggle-icon" width="19" height="19" role="presentation" aria-label="Закрыть меню" aria-hidden="true" focusable="false">
+          <use xlink:href="#icon-menu-close"></use>
+        </svg>
+      </button>
+    </div>
+    <ul class="page-header__contact contact-btn">
+      <li class="contact-btn__item contact-btn__item--phone">
+        <a class="contact-btn__link contact-btn__link--phone" href="#">
+          <span class="visually-hidden">Телефон</span>
+          <svg class="contact-btn__svg contact-btn__svg--phone" width="18" height="18">
+            <use xlink:href="#icon-phone2"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="contact-btn__item contact-btn__item--email">
+        <a class="contact-btn__link contact-btn__link--email" href="#">
+          <span class="visually-hidden">Email</span>
+          <svg class="contact-btn__svg contact-btn__svg--mail" width="18" height="14">
+            <use xlink:href="#icon-mail2"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="contact-btn__item contact-btn__item--button">
+        <a class="contact-btn__link contact-btn__link--button button" href="#">Авторизация</a>
+      </li>
+    </ul>
+    <nav class="page-header__nav page-nav">
+      <ul class="page-nav__site-menu site-menu">
+        <li class="site-menu__item">
+          <a class="site-menu__link" href="#">
+            <span data-hover="О сервисе">О сервисе</span>
+          </a>
+        </li>
+        <li class="site-menu__item">
+          <a class="site-menu__link" href="form.html">
+            <span data-hover="Направления">Направления</span>
+          </a>
+        </li>
+        <li class="site-menu__item">
+          <a class="site-menu__link" href="catalog.html">
+            <span data-hover="Попутчики">Попутчики</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="page-nav__user-menu user-menu">
+        <li class="user-menu__item">
+          <a class="user-menu__link button" href="#">Авторизация</a>
+        </li>
+      </ul>
+      <ul class="page-nav__contact-menu thumb-menu">
+        <li class="thumb-menu__item">
+          <a class="thumb-menu__link" href="tel:88005558628">
+            <p class="thumb-menu__icon">
+              <svg class="thumb-menu__icon-svg" width="18" height="18" role="presentation" aria-hidden="true" focusable="false">
+                <use xlink:href="#icon-phone"></use>
+              </svg>
+            </p>
+            <b class="thumb-menu__text">8 800 555-86-28</b>
+          </a>
+        </li>
+        <li class="thumb-menu__item">
+          <a class="thumb-menu__link" href="mailto:mail@htmlacademy.ru">
+            <p class="thumb-menu__icon">
+              <svg class="thumb-menu__icon-svg" width="18" height="13" role="presentation" aria-hidden="true" focusable="false">
+                <use xlink:href="#icon-mail"></use>
+              </svg>
+            </p>
+            <b class="thumb-menu__text">mail@htmlacademy.ru</b>
+          </a>
+        </li>
+      </ul>
+      <ul class="page-nav__social-menu social-menu">
+        <li class="social-menu__item">
+          <a class="social-menu__link" href="#">
+            <span class="visually-hidden">Facebook</span>
+            <svg class="social-menu__icon social-menu__icon--fb" width="11" height="22" role="presentation" aria-hidden="true" focusable="false">
+              <use xlink:href="#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-menu__item">
+          <a class="social-menu__link" href="#">
+            <span class="visually-hidden">Вконтакте</span>
+            <svg class="social-menu__icon social-menu__icon--vk" width="23" height="12" role="presentation" aria-hidden="true" focusable="false">
+              <use xlink:href="#icon-vk"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-menu__item">
+          <a class="social-menu__link" href="#">
+            <span class="visually-hidden">Instagram</span>
+            <svg class="social-menu__icon social-menu__icon--inst" width="18" height="18" role="presentation" aria-hidden="true" focusable="false">
+              <use xlink:href="#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="page-main">
+  <section class="page-main__head">
+    <div class="page-main__container container">
+      <h1 class="page-main__title">Направления</h1>
+    </div>
+  </section>
+
+  <form action="http://echo.htmlacademy.ru" method="post" enctype="multipart/form-data">
+    <section class="user-setting">
+      <div class="user-setting__container container">
+        <h2 class="visually-hidden">Пользовательские настройки</h2>
+        <div class="user-setting__wrapp">
+          <div class="user-setting__level level-module" data-level="80">
+            <svg class="level-module__svg level-module__svg--demin" width="100" height="100">
+              <use xlink:href="#icon-level-progress"></use>
+            </svg>
+            <span class="level-module__text">level</span>
+          </div>
+          <p class="user-setting__avatar">
+            <picture>
+              <source type="image/webp" media="(min-width: 1440px)" srcset="img/desktop/demin-desktop@1x.webp, img/desktop/demin-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/tablet/demin-tablet@1x.webp, img/tablet/demin-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/mobile/demin-mobile2@1x.webp, img/mobile/demin-mobile2@2x.webp 2x">
+
+              <source media="(min-width: 1440px)" srcset="img/desktop/demin-desktop@1x.jpg 1x, img/desktop/demin-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/tablet/demin-tablet@1x.jpg 1x, img/tablet/demin-tablet@2x.jpg 2x">
+              <img class="user-setting__avatar-img" src="img/mobile/demin-mobile2@1x.jpg" srcset="img/mobile/demin-mobile2@2x.jpg 2x" width="270" height="270" alt="Фотография Пети Демина">
+            </picture>
+          </p>
+          <p class="user-setting__button">
+            <input class="visually-hidden" id="photo-file" type="file" name="photo-file">
+            <label class="user-setting__button-file button button--grey" for="photo-file">
+              <span>Сменить</span> фото
+            </label>
+          </p>
+          <div class="user-setting__box user-setting__box--tag">
+            <label class="user-setting__box-title" for="tag">Тэги</label>
+            <textarea class="user-setting__box-text" id="tag" name="tag" placeholder="Коротко о себе в виде 5-8 хештэгов">#бургер #бар #футбол #концерт #крафт</textarea>
+          </div>
+          <div class="user-setting__box user-setting__box--transport">
+            <b class="user-setting__box-title">Транспорт</b>
+            <ul class="user-setting__transport transport-action">
+              <li class="transport-action__item">
+                <input class="visually-hidden transport-action__input" id="transport1" type="checkbox" name="transport[]" value="Авиаперелет" checked>
+                <label class="transport-action__tooltip tooltip" for="transport1" data-tooltip="Авиаперелет">
+                  <svg class="transport-action__svg transport-action__svg--plane" width="14" height="16">
+                    <use xlink:href="#icon-plane"></use>
+                  </svg>
+                </label>
+              </li>
+              <li class="transport-action__item">
+                <input class="visually-hidden transport-action__input" id="transport2" type="checkbox" name="transport[]" value="Автотранспорт" checked>
+                <label class="transport-action__tooltip tooltip" for="transport2" data-tooltip="Автотранспорт">
+                  <svg class="transport-action__svg transport-action__svg--bus" width="13" height="16">
+                    <use xlink:href="#icon-bus"></use>
+                  </svg>
+                </label>
+              </li>
+              <li class="transport-action__item">
+                <input class="visually-hidden transport-action__input" id="transport3" type="checkbox" name="transport[]" value="Велосипед">
+                <label class="transport-action__tooltip tooltip" for="transport3" data-tooltip="Велосипед">
+                  <svg class="transport-action__svg transport-action__svg--bike" width="19" height="17">
+                    <use xlink:href="#icon-bike"></use>
+                  </svg>
+                </label>
+              </li>
+              <li class="transport-action__item">
+                <input class="visually-hidden transport-action__input" id="transport4" type="checkbox" name="transport[]" value="Пешком" checked>
+                <label class="transport-action__tooltip tooltip" for="transport4" data-tooltip="Пешком">
+                  <svg class="transport-action__svg transport-action__svg--run" width="15" height="17">
+                    <use xlink:href="#icon-run"></use>
+                  </svg>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="my-plan">
+      <div class="my-plan__container container">
+        <div class="my-plan__wrapp">
+          <h2 class="my-plan__title">Мои планы:</h2>
+          <ol class="my-plan__list">
+            <li class="my-plan__item">
+              <h3 class="my-plan__country">Франция, Италия</h3>
+              <p class="my-plan__desc">
+                <b class="my-plan__info">3 попутчика</b>
+                <b class="my-plan__info">26 мар — 29 мар</b>
+                <a class="my-plan__edit" href="edit.html">Изменить</a>
+              </p>
+            </li>
+            <li class="my-plan__item">
+              <h3 class="my-plan__country">Тайланд, Индонезия</h3>
+              <p class="my-plan__desc">
+                <b class="my-plan__info">1 попутчик</b>
+                <b class="my-plan__info">1 июл — 15 июл</b>
+                <a class="my-plan__edit" href="edit.html">Изменить</a>
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="add-plan">
+      <div class="add-plan__container container">
+        <div class="add-plan__wrapp">
+          <h2 class="add-plan__title">Добавить план:</h2>
+          <div class="add-plan__step" id="step1">
+            <div class="add-plan__step-wrapp">
+              <header class="add-plan__header">
+                <div class="add-plan__header-info">
+                  <h3 class="add-plan__step-title">Шаг 1.<br> Даты пребывания</h3>
+                  <p class="add-plan__info">Укажите предпочтительное количество попутчиков, которых <br> вы хотели бы позвать в
+                    поездку и ее предполагаемую длительность.</p>
+                </div>
+                <ol class="add-plan__header-list">
+                  <li class="add-plan__header-item add-plan__header-item--active">Даты</li>
+                  <li class="add-plan__header-item">Маршрут</li>
+                  <li class="add-plan__header-item">Развлечения</li>
+                </ol>
+              </header>
+              <div class="add-plan__content">
+                <div class="add-plan__item add-plan__item--person">
+                  <label class="add-plan__item-title" for="count-person">Ищу попутчиков:</label>
+                  <label class="add-plan__item-desc" for="count-person">Чел.</label>
+                  <p class="add-plan__item-counter counter-input">
+                    <button class="counter-input__button counter-input__button--minus" type="button">
+                      <span class="visually-hidden">отнять</span>
+                    </button>
+                    <input class="counter-input__text" id="count-person" type="text" name="count-person" placeholder="0" value="2" aria-label="Добавить/убавить дни">
+                    <button class="counter-input__button counter-input__button--plus" type="button">
+                      <span class="visually-hidden">прибавить</span>
+                    </button>
+                  </p>
+                </div>
+                <div class="add-plan__item add-plan__item--day">
+                  <label class="add-plan__item-title" for="count-day">Длительность:</label>
+                  <label class="add-plan__item-desc" for="count-day">Дн.</label>
+                  <div class="add-plan__item-counter counter-input">
+                    <button class="counter-input__button counter-input__button--minus" type="button">
+                      <span class="visually-hidden">отнять</span>
+                    </button>
+                    <input class="counter-input__text" id="count-day" type="text" name="count-day" placeholder="0" value="2" aria-label="Добавить/убавить дни">
+                    <button class="counter-input__button counter-input__button--plus" type="button">
+                      <span class="visually-hidden">прибавить</span>
+                    </button>
+                  </div>
+                </div>
+                <p class="add-plan__item add-plan__item--children check-big">
+                  <input class="visually-hidden check-big__checkbox" id="children" type="checkbox" name="children" value="Можно с детьми" checked>
+                  <label class="check-big__box" for="children">
+                      <span class="check-big__input">
+                        <svg class="check-big__svg" width="9" height="9">
+                          <use xlink:href="#icon-tick"></use>
+                        </svg>
+                      </span>
+                    <b class="check-big__name">Можно с детьми</b>
+                  </label>
+                </p>
+                <article class="add-plan__calendar calendar">
+                  <header class="calendar__head">
+                    <button class="calendar__button calendar__button--left" type="button">
+                      <span class="visually-hidden">Назад</span>
+                    </button>
+                    <h2 class="calendar__title">Март 2019</h2>
+                    <button class="calendar__button calendar__button--right" type="button">
+                      <span class="visually-hidden">Вперед</span>
+                    </button>
+                  </header>
+                  <table class="calendar__content">
+                    <tr class="calendar__row">
+                      <th>П<span>н</span></th>
+                      <th>В<span>т</span></th>
+                      <th>С<span>р</span></th>
+                      <th>Ч<span>т</span></th>
+                      <th>П<span>т</span></th>
+                      <th>С<span>б</span></th>
+                      <th>В<span>с</span></th>
+                    </tr>
+                    <tr class="calendar__row">
+                      <td>23</td>
+                      <td>24</td>
+                      <td>25</td>
+                      <td>26</td>
+                      <td>27</td>
+                      <td>28</td>
+                      <td>1 <span class="calendar__month">мар</span></td>
+                    </tr>
+                    <tr class="calendar__row">
+                      <td>2</td>
+                      <td>3</td>
+                      <td>4</td>
+                      <td>5</td>
+                      <td>6</td>
+                      <td>7</td>
+                      <td>8</td>
+                    </tr>
+                    <tr class="calendar__row">
+                      <td>9</td>
+                      <td>10</td>
+                      <td>11</td>
+                      <td>12</td>
+                      <td>13</td>
+                      <td>14</td>
+                      <td>15</td>
+                    </tr>
+                    <tr class="calendar__row">
+                      <td>16</td>
+                      <td>17</td>
+                      <td>18</td>
+                      <td>19</td>
+                      <td>20</td>
+                      <td>21</td>
+                      <td>22</td>
+                    </tr>
+                    <tr class="calendar__row">
+                      <td>23</td>
+                      <td>24</td>
+                      <td>25</td>
+                      <td class="calendar__col calendar__col--chosen calendar__col--active">
+                        <div>26 <span>Заезд</span></div>
+                      </td>
+                      <td class="calendar__col calendar__col--chosen">
+                        <div>27</div>
+                      </td>
+                      <td class="calendar__col calendar__col--chosen">
+                        <div>28 <span>Выезд</span></div>
+                      </td>
+                      <td class="calendar__col">29</td>
+                    </tr>
+                    <tr class="calendar__row">
+                      <td class="calendar__col">30</td>
+                      <td class="calendar__col">31</td>
+                      <td class="calendar__col">1 <span class="calendar__month">апр</span></td>
+                      <td class="calendar__col">2</td>
+                      <td class="calendar__col">3</td>
+                      <td class="calendar__col">4</td>
+                      <td class="calendar__col">5</td>
+                    </tr>
+                  </table>
+                </article>
+                <div class="add-plan__button-wrapp">
+                  <a class="add-plan__button-next button-big" href="#step2">
+                    Следующий шаг
+                    <svg class="button-big__arrow" width="10" height="14">
+                      <use xlink:href="#icon-triangle-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="add-plan__step" id="step2">
+            <div class="add-plan__step-wrapp">
+              <header class="add-plan__header">
+                <div class="add-plan__header-info">
+                  <h3 class="add-plan__step-title">Шаг 2.<br> Маршрут</h3>
+                  <p class="add-plan__info">Укажите страны, которые вы хотели по посетить.<br> Это может быть одна или сразу несколько.</p>
+                </div>
+                <ol class="add-plan__header-list">
+                  <li class="add-plan__header-item">Даты</li>
+                  <li class="add-plan__header-item add-plan__header-item--active">Маршрут</li>
+                  <li class="add-plan__header-item">Развлечения</li>
+                </ol>
+              </header>
+              <div class="add-plan__content">
+                <ul class="add-plan__route route">
+
+                  <li class="route__item">
+                    <button class="route__country" type="button">
+                      <span class="route__country-name">Босния и Герцеговина</span>
+                    </button>
+                    <div class="route__flag">
+                      <img class="route__flag-img img-flag" src="img/flags/flag-bosnia.svg" width="35" height="24" alt="Флаг Босня и Герцеговина">
+                      <button class="route__flag-btn" type="button">
+                        <span class="visually-hidden">Удалить страну</span>
+                      </button>
+                    </div>
+                  </li>
+                  <li class="route__item">
+                    <button class="route__country" type="button">
+                      <span class="route__country-name">Чехословакия</span>
+                    </button>
+                    <div class="route__flag">
+                      <img class="route__flag-img img-flag" src="img/flags/flag-czech.svg" width="35" height="24" alt="Флаг Чехословакии">
+                      <button class="route__flag-btn" type="button">
+                        <span class="visually-hidden">Удалить страну</span>
+                      </button>
+                    </div>
+                  </li>
+                  <li class="route__item route__item--select">
+                    <button class="route__country" type="button">
+                      <span class="route__country-name">Выберите страну</span>
+                    </button>
+                    <div class="route__flag">
+                      <button class="route__flag-btn" type="button">
+                        <span class="visually-hidden">Удалить страну</span>
+                      </button>
+                    </div>
+                    <div class="route__modal">
+                      <header class="route__modal-head">
+                        <h3 class="route__modal-action">Выберите страну</h3>
+                        <button class="route__modal-btn" type="button">
+                          <span class="visually-hidden">Закрыть меню</span>
+                          <svg class="route__modal-svg" width="9" height="9" role="presentation" aria-label="Закрыть меню" aria-hidden="true" focusable="false">
+                            <use xlink:href="#icon-menu-close"></use>
+                          </svg>
+                        </button>
+                      </header>
+                      <ul class="route__modal-letters">
+                        <li class="route__modal-letter route__modal-letter--active">
+                          <a class="route__modal-abr" href="#">А</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Афганистан</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Албания</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Алгерия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Андорра</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Аргентина</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Армения</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Австралия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Австрия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Азербайджан</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Б</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Багамские Острова</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Бангладеш</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Бахрейн</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Белоруссия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Белиз</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Бельгия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Бенин</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Болгария</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Боливия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Босния и Герцеговина</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Ботсвана</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Бразилия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Бруней</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Буркина-Фасо</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Бурунди</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Бутан</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">В</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Вануату</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Великобритания</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Венгрия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Венесуэла</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Белиз</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Восточный Тимор</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Вьетнам</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Г</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Габон</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Гаити</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Гайана</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Гамбия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Гана</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Гватемала</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Гвинея</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Гвинея-Бисау</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Германия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Гондурас</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Гренада</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Грузия</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Д</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Дания</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Джибути</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Доминика</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Доминикана</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Е</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Египет</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Ё</a>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Ж</a>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">З</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Замбия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Зимбабве</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">И</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Израиль</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Индия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Индонезия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Иордания</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Ирак</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Иран</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Ирландия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Исландия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Испания</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Италия</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Й</a>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">К</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Кабо-Верде</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Казахстан</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Камбоджа</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Камерун</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Канада</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Катар</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Кения</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Кипр</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Киргизия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Кирибати</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Китай</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Колумбия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Коморы</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Конго</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">КНДР</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Республика Корея</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Коста-Рика</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Кот-д’Ивуар</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Куба</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Кувейт</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Л</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Лаос</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Латвия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Лесото</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Либерия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Ливан</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Ливия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Литва</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Лихтенштейн</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Люксембург</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">М</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Маврикий</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Мавритания</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Мадагаскар</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Малави</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Малайзия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Мали</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Мальдивы</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Мальта</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Марокко</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Маршалловы Острова</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Мексика</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Мозамбик</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Молдавия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Монако</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Монголия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Мьянма</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Н</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Намибия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Науру</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Непал</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Нигер</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Никарагуа</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Новая Зеландия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Норвегия</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">О</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">ОАЭ</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Оман</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">П</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Пакистан</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Палау</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Панама</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Папуа — Новая Гвинея</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Перу</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Польша</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Португалия</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Р</a>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">С</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Сальвадор</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Самоа</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Сан-Марино</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Сан-Томе и Принсипи</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Саудовская Аравия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Северная Македония</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Сейшелы</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Сенегал</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Сент-Люсия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Сербия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Сингапур</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Сирия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Словакия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Словения</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">США</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Сомали</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Судан</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Суринам</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Сьерра-Леоне</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Т</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Таджикистан</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Таиланд</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Танзания</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Тринидад и Тобаго</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Тувалу</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Туркмения</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Турция</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">У</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Уганда</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Узбекистан</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Украина</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Уругвай</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Ф</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Фиджи</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Филиппины</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Финляндия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Уругвай</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Х</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Хорватия</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Ц</a>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Ч</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Чад</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Черногория</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Чехия</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Чили</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Ш</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Швейцария</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Швеция</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Шри-Ланка</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Щ</a>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Э</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Эквадор</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Эритрея</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Эсватини</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Эстония</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Эфиопия</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Ю</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">ЮАР</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Южный Судан</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="route__modal-letter">
+                          <a class="route__modal-abr" href="#">Я</a>
+                          <ul class="route__modal-list">
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Ямайка</a>
+                            </li>
+                            <li class="route__modal-item">
+                              <a class="route__modal-name" href="#">Япония</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="route__item route__item--add">
+                    <button class="route__country" type="button">
+                      <span class="route__country-name">Добавить страну</span>
+                    </button>
+                  </li>
+                </ul>
+                <div class="add-plan__button-wrapp">
+                  <a class="add-plan__button-next button-big" href="#step3">
+                    Следующий шаг
+                    <svg class="button-big__arrow" width="10" height="14">
+                      <use xlink:href="#icon-triangle-right"></use>
+                    </svg>
+                  </a>
+                  <a class="add-plan__button-down button-big button-big--transparent" href="#step1">
+                    На шаг назад
+                    <svg class="button-big__arrow button-big__arrow--rotate" width="10" height="14">
+                      <use xlink:href="#icon-triangle-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="add-plan__step" id="step3">
+            <div class="add-plan__step-wrapp">
+              <header class="add-plan__header">
+                <div class="add-plan__header-info">
+                  <h3 class="add-plan__step-title">Шаг 3.<br> Развлечения</h3>
+                  <p class="add-plan__info">Наконец, расскажите о своих планах времяпровождения. Можно писать в свободной форме
+                    и ставить тэги.</p>
+                </div>
+                <ol class="add-plan__header-list">
+                  <li class="add-plan__header-item">Даты</li>
+                  <li class="add-plan__header-item">Маршрут</li>
+                  <li class="add-plan__header-item add-plan__header-item--active">Развлечения</li>
+                </ol>
+              </header>
+              <div class="add-plan__content">
+                <ul class="add-plan__country">
+                  <li class="add-plan__country-item">
+                    <label class="add-plan__country-head" for="country1">
+                      <span class="add-plan__country-name">Босния и Герцеговина</span>
+                      <img class="add-plan__country-flag img-flag" src="img/flags/flag-bosnia.svg" width="35" height="24" alt="Флаг Босня и Герцеговина">
+                    </label>
+                    <p class="add-plan__country-content add-plan__country-content--error">
+                      <textarea class="add-plan__country-input" id="country1" name="select-country[]" placeholder="План действий"></textarea>
+                      <span class="add-plan__country-error">Это поле должно быть заполнено</span>
+                    </p>
+                  </li>
+                  <li class="add-plan__country-item">
+                    <label class="add-plan__country-head" for="country2">
+                      <span class="add-plan__country-name">Чехословакия</span>
+                      <img class="add-plan__country-flag img-flag" src="img/flags/flag-czech.svg" width="35" height="24" alt="Флаг Чехословакии">
+                    </label>
+                    <p class="add-plan__country-content">
+                      <textarea class="add-plan__country-input" id="country2" name="select-country[]" placeholder="План действий">Пить пиво и лазить по старым замкам, наслаждаться аритектурой и вот это все.</textarea>
+                      <span class="add-plan__country-error">Это поле должно быть заполнено</span>
+                    </p>
+                  </li>
+                </ul>
+                <div class="add-plan__button-wrapp">
+                  <button class="add-plan__button-next button-big" type="submit">
+                    Отправить
+                    <svg class="button-big__arrow" width="10" height="14">
+                      <use xlink:href="#icon-triangle-right"></use>
+                    </svg>
+                  </button>
+                  <a class="add-plan__button-down button-big button-big--transparent" href="#step2">
+                    На шаг назад
+                    <svg class="button-big__arrow button-big__arrow--rotate" width="10" height="14">
+                      <use xlink:href="#icon-triangle-right"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </form>
+</main>
+
+<footer class="main-footer">
+  <div class="main-footer__container container">
+    <a class="main-footer__logo logo logo--blue" href="index.html">
+      <picture>
+        <source type="image/webp" media="(min-width: 1440px)" srcset="img/desktop/logo-desktop-blue@1x.webp 1x, img/desktop/logo-desktop-blue@2x.webp 2x">
+        <source type="image/webp" media="(min-width: 768px)" srcset="img/tablet/logo-tablet-blue@1x.webp 1x, img/tablet/logo-tablet-blue@2x.webp 2x">
+        <source type="image/webp" srcset="img/mobile/logo-mobile-blue@1x.webp 1x, img/mobile/logo-mobile-blue@2x.webp 2x">
+
+        <source media="(min-width: 1440px)" srcset="img/desktop/logo-desktop-blue@1x.png 1x, img/desktop/logo-desktop-blue@2x.png 2x">
+        <source media="(min-width: 768px)" srcset="img/tablet/logo-tablet-blue@1x.png 1x, img/tablet/logo-tablet-blue@2x.png 2x">
+        <img class="logo__img" src="img/mobile/logo-mobile-blue@1x.png" srcset="img/mobile/logo-mobile-blue@2x.png 2x" alt="Логотип Погнали">
+      </picture>
+    </a>
+
+    <ul class="main-footer__social-menu social-menu social-menu--bg">
+      <li class="social-menu__item">
+        <a class="social-menu__link" href="#">
+          <span class="visually-hidden">Facebook</span>
+          <svg class="social-menu__icon social-menu__icon--fb" width="11" height="22" role="presentation" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon-facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="social-menu__item">
+        <a class="social-menu__link" href="#">
+          <span class="visually-hidden">Вконтакте</span>
+          <svg class="social-menu__icon social-menu__icon--vk" width="23" height="12" role="presentation" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon-vk"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="social-menu__item">
+        <a class="social-menu__link" href="#">
+          <span class="visually-hidden">Instagram</span>
+          <svg class="social-menu__icon social-menu__icon--inst" width="18" height="18" role="presentation" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon-instagram"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <p class="main-footer__copyright">
+      <a class="main-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">Разработано</a>
+    </p>
+  </div>
+</footer>
+
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+<script src="js/script.min.js"></script>
+</body>
+
+</html>

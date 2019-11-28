@@ -1,0 +1,781 @@
+/* ==========================================================================
+   Форма добавления плана
+   ========================================================================== */
+
+.add-plan {
+  position: relative;
+  z-index: 3;
+
+  margin-top: -25px;
+  padding-top: 28px;
+  padding-bottom: 64px;
+
+  background-color: #d4d9eb;
+  border-radius: 30px 30px 0 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 45px;
+    padding-bottom: 111px;
+
+    border-radius: 40px 40px 0 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-bottom: 122px;
+  }
+}
+
+/* Обертка */
+.add-plan__wrapp {
+  box-sizing: border-box;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0 35px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 0;
+  }
+}
+
+/* Заголовок секции с планами */
+.add-plan__title {
+  position: relative;
+
+  margin: 0;
+  margin-bottom: 30px;
+
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  color: $blue-color--light;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 52px;
+
+    font-size: 36px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-left: 70px;
+  }
+}
+
+/* 3 индикатора напротив заголовка */
+.add-plan__title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 60px;
+
+  width: 5px;
+  height: 5px;
+
+  background-color: $blue-color--light;
+  border-radius: 50%;
+  box-shadow: 22px 0 #bbbfcc, 42px 0 #bbbfcc;
+
+  @media (min-width: $breakpoint-tablet) {
+    top: 46%;
+    right: 68px;
+    box-shadow: 34px 0 #bbbfcc, 68px 0 #bbbfcc;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    display: none;
+  }
+}
+
+/* Секция с шагом */
+.add-plan__step {
+  margin-bottom: 10px;
+  padding: 23px 25px;
+
+  line-height: 0;
+
+  background-color: $white-color;
+  border-radius: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 44px;
+    padding: 45px 43px 56px;
+
+    border-radius: 30px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 97px 43px 105px;
+    border-radius: 60px;
+  }
+}
+
+/* Обертка */
+.add-plan__step-wrapp {
+  @media (min-width: $breakpoint-desktop) {
+    padding-left: 116px;
+    padding-right: 118px;
+  }
+}
+
+/* Верхняя часть с информацией */
+.add-plan__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 22px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 56px;
+  }
+}
+
+.add-plan__step:nth-of-type(2) {
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 50px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 43px;
+  }
+}
+
+.add-plan__step:nth-of-type(2) .add-plan__header,
+.add-plan__step:nth-of-type(3) .add-plan__header {
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 35px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 55px;
+  }
+}
+
+/* Обертка информации */
+.add-plan__header-info {
+  @media (min-width: $breakpoint-tablet) {
+    width: 525px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 590px;
+  }
+}
+
+/* Заголовок в секции с шагами */
+.add-plan__step-title {
+  margin: 0;
+  margin-bottom: 15px;
+
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 700;
+  color: $blue-color--light;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 35px;
+
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    br {
+      display: none;
+    }
+  }
+}
+
+/* Описание в секции с шагами */
+.add-plan__info {
+  margin: 0;
+
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: normal;
+  color: $grey-color;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+/* Перенос слов на разных разрешениях */
+.add-plan__info br {
+  display: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: inline-block;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    display: inline-block;
+  }
+}
+
+/* Список позиции шага */
+.add-plan__header-list {
+  @include reset-ul;
+  display: none;
+
+  @media (min-width: $breakpoint-desktop) {
+    display: block;
+    width: 230px;
+  }
+}
+
+/* Элемент списка позиции шага */
+.add-plan__header-item {
+  position: relative;
+
+  margin-bottom: 25px;
+  padding-left: 43px;
+
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: normal;
+  color: rgba($black-color, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-left: 46px;
+  }
+}
+
+.add-plan__header-item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  width: 4px;
+  height: 4px;
+
+  background-color: #d9d9da;
+  border-radius: 50%;
+  transform: translateY(-50%);
+
+  @media (min-width: $breakpoint-desktop) {
+    top: 60%;
+    left: 3px;
+
+    width: 5px;
+    height: 5px;
+  }
+}
+
+/* Активный элемент списка позиции шага */
+.add-plan__header-item--active {
+  color: $black-color;
+
+  &::before {
+    background-color: $blue-color--light;
+  }
+}
+
+/* Основное содежимое секции с шагом */
+.add-plan__content {
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    flex-wrap: wrap;
+
+    border-top: 1px solid #d6d9e6;
+  }
+}
+
+/* Элементы первой секции планов */
+.add-plan__item {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 21px;
+
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 500;
+  color: $blue-color--light;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 25px;
+    padding-top: 23px;
+
+    font-size: 20px;
+    line-height: 18px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 0;
+    border: none;
+  }
+}
+
+/* Попутчики */
+.add-plan__item--person {
+  @media (min-width: $breakpoint-tablet) {
+    order: 1;
+    margin-bottom: 25px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    align-items: center;
+    width: 500px;
+    margin-bottom: 14px;
+    padding-top: 30px;
+  }
+}
+
+/* Дни */
+.add-plan__item--day {
+  @media (min-width: $breakpoint-tablet) {
+    order: 3;
+    margin-bottom: 60px;
+
+    border-top: 1px solid #d6d9e6;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    align-items: center;
+    width: 500px;
+    margin-bottom: 32px;
+
+    border-top: none;
+  }
+}
+
+/* Дети */
+.add-plan__item--children {
+  @media (min-width: $breakpoint-tablet) {
+    order: 2;
+    padding: 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: auto;
+    margin: 0;
+    margin-left: auto;
+    padding-top: 16px;
+  }
+}
+
+/* Заголовок элементов первой секции планов */
+.add-plan__item-title {
+  max-width: 146px;
+  font-weight: 500;
+
+  @media (min-width: $breakpoint-tablet) {
+    max-width: 100%;
+    letter-spacing: 2px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    order: 1;
+    width: 201px;
+    margin-right: 20px;
+  }
+}
+
+/* Описание элементов первой секции планов */
+.add-plan__item-desc {
+  margin-left: auto;
+  margin-bottom: 10px;
+
+  color: rgba($blue-color--light, 0.3);
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 26px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    order: 3;
+    margin: 0;
+
+    color: $blue-color--light;
+  }
+}
+
+/* Счетчик элементов первой секции планов */
+.add-plan__item-counter {
+  @media (min-width: $breakpoint-desktop) {
+    order: 2;
+    width: 181px;
+    margin-right: 38px;
+  }
+}
+
+/* Календарь элементов первой секции планов */
+.add-plan__calendar {
+  margin-bottom: 22px;
+
+  @media (min-width: $breakpoint-tablet) {
+    order: 4;
+    margin-bottom: 45px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 58px;
+  }
+}
+
+/* Обертка для кнопок */
+.add-plan__button-wrapp {
+  order: 5;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+/* Кнопка следующий шаг */
+.add-plan__button-next {
+  @media (max-width: $breakpoint-tablet) {
+    width: 100%;
+    padding: 5px 30px;
+
+    font-size: 17px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+
+    border-radius: 20px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 288px;
+    margin-bottom: 0;
+    padding: 28px 76px 27px 35px;
+
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: none;
+
+    border-radius: 15px;
+  }
+}
+
+/* Треугольник у кнопки */
+.add-plan__button-next .button-big__arrow,
+.add-plan__button-down .button-big__arrow {
+  display: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: block;
+  }
+}
+
+/* Предыдущий шаг */
+.add-plan__button-down {
+  width: 100%;
+  margin-top: 27px;
+  padding: 0;
+
+  line-height: 0;
+  text-align: center;
+
+  background-color: transparent;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: auto;
+    margin-top: 0;
+    padding-left: 30px;
+
+    line-height: 24px;
+
+    text-transform: none;
+  }
+}
+
+/* Секция вторая с маршрутами */
+.add-plan__route {
+  margin-bottom: 25px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 50px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 60px;
+  }
+}
+
+/* Секция третья с маршрутами */
+.add-plan__country {
+  @include reset-ul;
+  width: 100%;
+  margin-bottom: 22px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 47px;
+    padding-top: 27px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 59px;
+    padding-top: 70px;
+  }
+}
+
+/* Элемент маршрутов */
+.add-plan__country-item {
+  position: relative;
+  margin-bottom: 21px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 45px;
+    padding-right: 30px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-right: 112px;
+  }
+}
+
+/* Декоративная линия */
+.add-plan__country-item::before {
+  content: "";
+  position: absolute;
+  top: 11px;
+  left: -14px;
+
+  width: 15px;
+  height: 109%;
+
+  border: 2px solid $blue-color--light;
+  border-right-color: transparent;
+
+  @media (min-width: $breakpoint-tablet) {
+    left: auto;
+    right: 2px;
+    top: 31px;
+
+    width: 3px;
+    height: 116%;
+
+    background-color: $blue-color--light;
+    border: none;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    right: 223px;
+    height: 117%;
+  }
+}
+
+/* Убрать декоративную линию у последнего элемента */
+.add-plan__country-item:last-child::before {
+  display: none;
+}
+
+/* Верхняя часть с названием страны */
+.add-plan__country-head {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    justify-content: flex-start;
+  }
+}
+
+/* Декоративный круг */
+.add-plan__country-head::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  z-index: 1;
+
+  width: 6px;
+  height: 6px;
+
+  background-color: $blue-color--light;
+  border-radius: 50%;
+  transform: translateY(-50%);
+
+  @media (min-width: $breakpoint-tablet) {
+    left: auto;
+    right: -34px;
+
+    width: 15px;
+    height: 15px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    right: 105px;
+  }
+}
+
+/* Имя страны */
+.add-plan__country-name {
+  position: relative;
+
+  width: 100%;
+  padding-left: 12px;
+
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 500;
+  color: $blue-color--light;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-left: 1px;
+
+    font-size: 30px;
+    line-height: 18px;
+    font-weight: 700;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 730px;
+  }
+}
+
+/* Имя страны */
+.add-plan__country-name::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  background-image: linear-gradient(to right, transparent 0, $white-color 70%);
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 100px;
+  }
+}
+
+/* Флаг страны */
+.add-plan__country-flag {
+  width: 35px;
+  height: 24px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 70px;
+    height: 47px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-left: auto;
+  }
+}
+
+/* Контент третьей секции с развлечениями */
+.add-plan__country-content {
+  position: relative;
+  margin: 0;
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 730px;
+  }
+}
+
+/* Поле для ввода текста */
+.add-plan__country-input {
+  @include placeholder {
+    color: rgba($grey-color, 0.3);
+  }
+  width: 100%;
+  min-height: 220px;
+  padding: 7px 14px;
+
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: normal;
+  color: $grey-color;
+
+  border: 1px solid #cbced9;
+  border-radius: 3px;
+  resize: none;
+  outline: none;
+
+  &:hover {
+    border-color: #959bb2;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $blue-color--dark;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    min-height: 140px;
+    padding: 15px 20px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 23px 26px;
+  }
+}
+
+/* Ошибка ввода */
+.add-plan__country-content--error .add-plan__country-input {
+  border-color: #f47e7e;
+}
+
+/* Ошибка ввода */
+.add-plan__country-error {
+  position: absolute;
+  left: 2px;
+  bottom: 1px;
+
+  display: none;
+  width: 217px;
+  padding: 5px 15px;
+
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: normal;
+  color: #ff0000;
+
+  background-color: #ffefef;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 499px;
+    padding: 15px 23px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 727px;
+  }
+}
+
+/* Ошибка ввода */
+.add-plan__country-content--error .add-plan__country-error {
+  display: block;
+}

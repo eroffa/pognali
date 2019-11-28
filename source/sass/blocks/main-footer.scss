@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Подвал
+   ========================================================================== */
+
+.main-footer {
+  position: relative;
+  z-index: 4;
+
+  margin-top: -10px;
+  padding-top: 37px;
+  padding-bottom: 15px;
+
+  color: $grey-color;
+
+  background-color: $white-color;
+  border-radius: 30px 30px 0 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: -60px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+
+    border-radius: 60px 60px 0 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-top: -46px;
+  }
+}
+
+/* Подвал не на главной странице */
+.inner-page .main-footer {
+  margin-top: -20px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: -50px;
+  }
+}
+
+/* Контейнер */
+.main-footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+  }
+}
+
+/* Логотип */
+.main-footer__logo {
+  display: block;
+  margin-bottom: 37px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 170px;
+    margin: 0;
+    margin-right: 84px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 205px;
+    margin-right: 365px;
+  }
+}
+
+/* Навигация с социальными ссылками */
+.main-footer__social-menu {
+  margin-bottom: 37px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 185px;
+    margin: 0;
+  }
+}
+
+/* Элементы */
+.main-footer .social-menu__item {
+  margin-right: 0;
+}
+
+/* Копирайт */
+.main-footer__copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding-top: 20px;
+
+  border-top: 1px solid rgba($black-color, 0.05);
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    justify-content: space-between;
+    width: 155px;
+    margin-left: auto;
+    padding-top: 0;
+
+    border-top: none;
+  }
+}
+
+/* Название копирайта */
+.main-footer__copyright-link {
+  position: relative;
+
+  display: block;
+  width: 100%;
+  padding-right: 45px;
+
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: normal;
+  color: $grey-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+/* Значок копирайта */
+.main-footer__copyright-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  width: 27px;
+  height: 34px;
+
+  background-image: url("../img/social/icon-htmlacademy.svg");
+  background-repeat: no-repeat;
+
+  transform: translateY(-50%);
+}
+
+/* Разное состояние */
+.main-footer__copyright-link:hover::before,
+.main-footer__copyright-link:focus::before {
+  opacity: 0.6;
+}
+
+.main-footer__copyright-link:active::before {
+  opacity: 0.3;
+}

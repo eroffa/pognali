@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Кнопки связи
+   ========================================================================== */
+
+/* Список кнопок связи */
+.contact-btn {
+  @include reset-ul;
+  display: flex;
+}
+
+/* Ссылка кнопок связи */
+.contact-btn__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Ссылка с телефоном */
+.contact-btn__link--phone {
+  background-color: $orange-color;
+  border-radius: 50%;
+
+  &:hover,
+  &:focus {
+    background-color: #f26926;
+  }
+}
+
+/* Ссылка с почтой */
+.contact-btn__link--email {
+  background-color: $yellow-color--dark;
+  border-radius: 50%;
+
+  &:hover,
+  &:focus {
+    background-color: $orange-color;
+  }
+}
+
+/* Ссылка с кнопкой авторизации */
+.contact-btn__link--button {
+  min-width: 189px;
+  padding: 6px 15px 4px;
+}
+
+/* Миниатюра */
+.contact-btn__svg {
+  fill: $blue-color--dark;
+}
+
+/* Миниатюра телефона */
+.contact-btn__svg--phone {
+  width: 18px;
+  height: 18px;
+}
+
+/* Миниатюра почты */
+.contact-btn__svg--mail {
+  width: 18px;
+  height: 14px;
+}
+
+/* Миниатюры при наведении */
+.contact-btn__link--phone:active .contact-btn__svg--phone,
+.contact-btn__link--email:active .contact-btn__svg--mail {
+  fill: rgba($blue-color--dark, 0.3);
+}

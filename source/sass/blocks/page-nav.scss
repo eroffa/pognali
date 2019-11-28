@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Основная навигация
+   ========================================================================== */
+
+/* Главное меню */
+.page-nav {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* Главное меню */
+.page-nav__site-menu {
+  margin-bottom: 49px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 100%;
+    margin-left: 58px;
+    margin-bottom: 126px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    display: flex;
+    width: inherit;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Пользовательское меню */
+.page-nav__user-menu {
+  margin-bottom: 52px;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    display: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Меню с контактами */
+.page-nav__contact-menu {
+  margin-bottom: 40px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 100%;
+    margin-left: 58px;
+    margin-bottom: 130px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    display: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Меню с соц. сетями */
+.page-nav__social-menu {
+  @media (min-width: $breakpoint-tablet) {
+    width: 100%;
+    margin-left: 83px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    display: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+}

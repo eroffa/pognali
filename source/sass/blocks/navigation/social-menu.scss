@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Навигация по соцсетям
+   ========================================================================== */
+
+/* Меню с соц. сетями */
+.social-menu {
+  @include reset-ul;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (min-width: $breakpoint-tablet) {
+    justify-content: flex-start;
+  }
+}
+
+/* Элемент меню с соц. сетями */
+.social-menu__item {
+  display: flex;
+  align-items: center;
+  margin-right: 27px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-right: 36px;
+  }
+}
+
+/* Социальная ссылка с фоном  */
+.social-menu--bg .social-menu__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+
+  background-color: $yellow-color;
+  border-radius: 50%;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.social-menu--bg .social-menu__link:hover,
+.social-menu--bg .social-menu__link:focus,
+.social-menu--bg .social-menu__link:active {
+  background-color: $blue-color;
+}
+
+.social-menu--bg .social-menu__icon {
+  fill: $blue-color--light;
+}
+
+.social-menu--bg .social-menu__link:hover .social-menu__icon,
+.social-menu--bg .social-menu__link:focus .social-menu__icon {
+  fill: $white-color;
+}
+
+.social-menu--bg .social-menu__link:active .social-menu__icon {
+  opacity: 0.3;
+}
+
+/* Изображение соц сети */
+.social-menu__icon {
+  fill: $grey-color--light;
+}
+
+.social-menu__link:hover .social-menu__icon,
+.social-menu__link:focus .social-menu__icon {
+  fill: rgba($grey-color--light, 0.6);
+}
+
+.social-menu__link:active .social-menu__icon {
+  fill: rgba($grey-color--light, 0.3);
+}
+
+/* Facebook  */
+.social-menu__icon--fb {
+  width: 11px;
+  height: 22px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 14px;
+    height: 28px;
+  }
+}
+
+/* Вконтакте  */
+.social-menu__icon--vk {
+  width: 23px;
+  height: 12px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 31px;
+    height: 16px;
+  }
+}
+
+/* Инстаграм  */
+.social-menu__icon--inst {
+  width: 18px;
+  height: 18px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 24px;
+    height: 24px;
+  }
+}

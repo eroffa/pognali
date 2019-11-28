@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Подключаем шрифты
+   ========================================================================== */
+
+@include font-face("Bloggersans", "../fonts/bloggersans");
+@include font-face("Bloggersans", "../fonts/bloggersans-italic", $weight: normal, $style: italic);
+@include font-face("Bloggersans", "../fonts/bloggersans-light", $weight: 300);
+@include font-face("Bloggersans", "../fonts/bloggersans-lightitalic", $weight: 300, $style: italic);
+@include font-face("Bloggersans", "../fonts/bloggersans-medium", $weight: 500);
+@include font-face("Bloggersans", "../fonts/bloggersans-mediumitalic", $weight: 500, $style: italic);
+@include font-face("Bloggersans", "../fonts/bloggersans-bold", $weight: 700);
+@include font-face("Bloggersans", "../fonts/bloggersans-bolditalic", $weight: 700, $style: italic);

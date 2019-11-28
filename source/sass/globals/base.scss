@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Основные стили
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+
+  min-width: $breakpoint-mobile;
+
+  font-family: "Bloggersans", "Arial", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: $fz;
+  line-height: $lh;
+  color: $black-color;
+
+  background-color: $white-color--blue;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Только для скрин ридеров */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.hidden-tb {
+  @media (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.sprite {
+  display: none;
+}

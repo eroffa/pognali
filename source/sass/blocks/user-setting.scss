@@ -1,0 +1,408 @@
+/* ==========================================================================
+   Пользовательские настройки
+   ========================================================================== */
+
+.user-setting {
+  padding-top: 22px;
+  padding-bottom: 34px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 63px;
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: 0;
+  }
+}
+
+/* Обертка */
+.user-setting__wrapp {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media (min-width: $breakpoint-tablet) {
+    align-items: flex-start;
+    padding: 0 35px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    //justify-content: flex-end;
+    margin-top: -190px;
+    padding: 0;
+    padding-left: 65px;
+  }
+}
+
+/* Уровень */
+.user-setting__level {
+  width: 100px;
+  height: 100px;
+  margin-left: 19px;
+
+  color: $grey-color;
+
+  background-color: transparent;
+
+  @media (min-width: $breakpoint-tablet) {
+    order: 1;
+    width: 94px;
+    height: 94px;
+    margin-left: 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-top: 45px;
+    margin-right: 45px;
+    margin-left: auto;
+    color: $white-color;
+  }
+}
+
+/* Номер уровня */
+.user-setting__level::before {
+  top: 22px;
+
+  font-size: 38px;
+  line-height: 38px;
+  font-weight: 700;
+  color: $blue-color--dark;
+
+  @media (min-width: $breakpoint-tablet) {
+    top: 17px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    color: $white-color;
+  }
+}
+
+/* Иконка уровня */
+.user-setting__level .level-module__svg {
+  width: 100px;
+  height: 100px;
+
+  stroke-width: 3;
+
+  @media (min-width: $breakpoint-tablet) {
+    position: absolute;
+    left: 2px;
+    width: 94px;
+    height: 94px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    left: 0;
+  }
+}
+
+/* Круг */
+.user-setting__level .level-module__draw {
+  @media (min-width: $breakpoint-tablet) {
+    cx: 47px;
+    cy: 47px;
+    r: 46px;
+  }
+}
+
+/* Текст */
+.user-setting__level .level-module__text {
+  bottom: 15px;
+
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: normal;
+}
+
+/* Декоративный элемент текста */
+.user-setting__level .level-module__text::before {
+  left: -9px;
+
+  width: 49px;
+  height: 2px;
+
+  background-color: #cbced9;
+
+  @media (min-width: $breakpoint-desktop) {
+    background-color: rgba($white-color, 0.3);
+  }
+}
+
+/* Обертка для фото */
+.user-setting__avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  margin-right: 17px;
+  margin-bottom: 20px;
+
+  line-height: 0;
+
+  background: $white-color--dark;
+  border-radius: 50%;
+
+  @media (min-width: $breakpoint-tablet) {
+    order: 3;
+    width: 94px;
+    height: 94px;
+    margin-right: 0;
+    margin-bottom: 52px;
+
+    border-radius: 5px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    order: 2;
+    width: 190px;
+    height: 190px;
+    margin-bottom: 0;
+    margin-right: 95px;
+
+    border-radius: 5px 5px 0 0;
+  }
+}
+
+/* Фото */
+.user-setting__avatar-img {
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 94px;
+    height: 94px;
+
+    border-radius: 5px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 190px;
+    height: 190px;
+
+    border-radius: 5px 5px 0 0;
+  }
+}
+
+/* Сменить фото */
+.user-setting__button {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 33px;
+
+  @media (min-width: $breakpoint-tablet) {
+    order: 4;
+    margin-bottom: 54px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    order: 3;
+    //width: 190px;
+    margin-bottom: 25px;
+    //margin-left: 50%;
+    margin-right: 95px;
+    text-align: right;
+  }
+}
+
+/* Сменить фото кнопка */
+.user-setting__button-file {
+  width: 100%;
+
+  font-size: 17px;
+  color: $blue-color--light;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 20px 25px;
+
+    font-size: 20px;
+    line-height: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    border-radius: 5px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 190px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 0 0 5px 5px;
+  }
+}
+
+/* Прячем слово Сменить */
+.user-setting__button-file span {
+  @media (min-width: $breakpoint-desktop) {
+    display: none;
+  }
+}
+
+/* Элементы */
+.user-setting__box {
+  position: relative;
+
+  width: 100%;
+  margin-bottom: 26px;
+
+  line-height: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 0;
+  }
+}
+
+/* Элемент тэгов */
+.user-setting__box--tag {
+  @media (min-width: $breakpoint-tablet) {
+    order: 5;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    order: 4;
+    width: 730px;
+    margin-right: auto;
+  }
+}
+
+.user-setting__box--tag .user-setting__box-title {
+  @media (min-width: $breakpoint-desktop) {
+    left: 63px;
+  }
+}
+
+.user-setting__box--tag .user-setting__box-text {
+  @media (min-width: $breakpoint-desktop) {
+    padding: 31px 38px 13px;
+  }
+}
+
+/* Элемент транспортов */
+.user-setting__box--transport {
+  padding: 14px 25px;
+
+  border: 1px solid #cbced9;
+  border-radius: 10px;
+
+  &:hover {
+    border-color: #aeb4cb;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    order: 2;
+    width: 308px;
+    padding: 25px 50px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    order: 5;
+    width: 385px;
+    padding: 25px 50px 24px;
+  }
+}
+
+/* Заголовок */
+.user-setting__box-title {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+
+  padding: 0 17px;
+
+  font-size: $fz;
+  line-height: 18px;
+  font-weight: 700;
+  color: $blue-color--light;
+  text-transform: uppercase;
+  text-align: center;
+
+  background-color: $white-color--blue;
+  transform: translateX(-50%);
+
+  @media (min-width: $breakpoint-tablet) {
+    top: auto;
+    bottom: -8px;
+
+    padding: 0 17px;
+
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+}
+
+/* Поле ввода */
+.user-setting__box-text {
+  width: 100%;
+  padding: 21px 25px;
+
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: normal;
+  color: $grey-color;
+
+  background-color: transparent;
+  border: 1px solid #cbced9;
+  border-radius: 10px;
+  resize: none;
+  outline: none;
+  overflow: hidden;
+
+  &:hover {
+    border-color: #aeb4cb;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $blue-color--dark;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 32px 38px 11px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 23px 75px 25px;
+  }
+}
+
+/* Список транспортов */
+.user-setting__transport {
+  @include reset-ul;
+}
+
+.user-setting__transport .transport-action__tooltip:hover::before {
+  @media (min-width: $breakpoint-tablet) {
+    top: 39px;
+  }
+}
+
+.user-setting__transport .transport-action__tooltip:hover::after {
+  @media (min-width: $breakpoint-tablet) {
+    top: 55px;
+  }
+}
+
+/* Элементы списка */
+.user-setting__transport .transport-action__item {
+  @media (min-width: $breakpoint-tablet) {
+    margin-right: 8px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-right: 0;
+  }
+}

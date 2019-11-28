@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Основной файл
+   ========================================================================== */
+
+/* Настройки
+   ========================================================================== */
+@import "settings/normalize";
+@import "settings/variable";
+@import "settings/mixin";
+@import "settings/font";
+
+/* Глобальные стили
+   ========================================================================== */
+@import "globals/base";
+@import "globals/container";
+@import "blocks/logo";
+@import "blocks/buttons/button";
+@import "blocks/buttons/button-big";
+@import "blocks/page-info";
+@import "blocks/tooltip";
+@import "blocks/contact-btn";
+@import "blocks/img-flag";
+@import "blocks/tags";
+@import "blocks/transport";
+@import "blocks/transport-action";
+@import "blocks/index-form";
+@import "blocks/table-price";
+@import "blocks/page-main";
+@import "blocks/indicator";
+@import "blocks/like";
+@import "blocks/check";
+@import "blocks/check-big";
+@import "blocks/level-range";
+@import "blocks/level-module";
+@import "blocks/counter-input";
+@import "blocks/calendar";
+@import "blocks/route";
+
+/* Навигации
+   ========================================================================== */
+@import "blocks/navigation/site-menu";
+@import "blocks/navigation/user-menu";
+@import "blocks/navigation/thumb-menu";
+@import "blocks/navigation/social-menu";
+@import "blocks/page-nav";
+
+/* Секции
+   ========================================================================== */
+@import "blocks/page-header";
+@import "blocks/promo";
+@import "blocks/step";
+@import "blocks/service";
+@import "blocks/direction";
+@import "blocks/companion";
+@import "blocks/tariff";
+@import "blocks/registration";
+@import "blocks/contact";
+@import "blocks/main-footer";
+@import "blocks/result-user";
+@import "blocks/pagination";
+@import "blocks/country-filter";
+@import "blocks/user-filter";
+@import "blocks/tariff-popup";
+@import "blocks/user-setting";
+@import "blocks/my-plan";
+@import "blocks/add-plan";

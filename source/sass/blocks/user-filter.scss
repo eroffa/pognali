@@ -1,0 +1,341 @@
+/* ==========================================================================
+   Фильтр по пользователям
+   ========================================================================== */
+
+.user-filter {
+  box-sizing: border-box;
+  padding: 25px 26px 22px;
+
+  color: $blue-color--light;
+
+  background-color: $yellow-color;
+  border-radius: 20px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 35px 35px 38px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 45px 47px 49px;
+  }
+}
+
+/* Заголовок */
+.user-filter__title {
+  margin: 0;
+  margin-bottom: 23px;
+  padding-right: 90px;
+
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 700;
+  color: $blue-color--light;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 31px;
+    padding-bottom: 39px;
+
+    font-size: 30px;
+    line-height: 30px;
+
+    border-bottom: 1px solid #f3c72b;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 30px;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+/* Элемент фильтра */
+.user-filter__feature {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin-bottom: 11px;
+  padding-top: 10px;
+
+  border-top: 1px solid #f3c72b;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 20px;
+    padding-top: 0;
+
+    border-top: none;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 11px;
+  }
+}
+
+.user-filter__feature--show {
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 26px;
+  }
+}
+
+.user-filter__feature--eat {
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 21px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 26px;
+  }
+}
+
+.user-filter__feature--transport {
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 14px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 29px;
+  }
+}
+
+.user-filter__feature--lvl .level-range__range {
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: -3px;
+  }
+}
+
+.user-filter__feature:last-of-type {
+  margin-bottom: 17px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-bottom: 36px;
+    margin-bottom: 36px;
+
+    border-bottom: 1px solid #f3c72b;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 6px;
+    border-bottom: none;
+  }
+}
+
+/* Заголовок */
+.user-filter__subtitle-link {
+  position: relative;
+
+  display: block;
+  width: 100%;
+  padding-right: 25px;
+
+  font-size: $fz;
+  line-height: 18px;
+  font-weight: 700;
+  color: $blue-color--light;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  span {
+    display: none;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 105px;
+    margin-right: 21px;
+    padding: 0;
+
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    span {
+      display: none;
+    }
+  }
+}
+
+/* Треугольник вниз */
+.user-filter__subtitle-link::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 8px;
+
+  width: 0;
+  height: 0;
+
+  border: 4px solid transparent;
+  border-top-color: $blue-color;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    top: 12px;
+
+    display: block;
+
+    border-width: 5px;
+  }
+}
+
+/* Треугольник верх */
+.user-filter__feature--show .user-filter__subtitle-link::before {
+  top: 4px;
+  border-bottom-color: $blue-color;
+  border-top-color: transparent;
+
+  @media (min-width: $breakpoint-desktop) {
+    top: 7px;
+  }
+}
+
+.user-filter__feature--show .user-filter__subtitle-link {
+  margin-bottom: 16px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 21px;
+  }
+}
+
+.user-filter__feature--transport .user-filter__subtitle-link {
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 14px;
+  }
+}
+
+.user-filter__feature--lvl .user-filter__subtitle-link {
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 16px;
+  }
+}
+
+/* Список элементов категорий */
+.user-filter__list {
+  @include reset-ul;
+  display: none;
+  width: 100%;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    display: none;
+  }
+}
+
+.user-filter__list .transport-action__tooltip:hover::before {
+  @media (min-width: $breakpoint-tablet) {
+    top: 39px;
+  }
+}
+
+.user-filter__list .transport-action__tooltip:hover::after {
+  @media (min-width: $breakpoint-tablet) {
+    top: 55px;
+  }
+}
+
+/* При раскрытом списке */
+.user-filter__feature--show .user-filter__list {
+  display: block;
+  margin-bottom: 8px;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    display: block;
+  }
+}
+
+.user-filter__feature--transport.user-filter__feature--show .user-filter__list {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.user-filter__feature--transport .user-filter__list {
+  @media (min-width: $breakpoint-tablet) {
+    margin-left: -6px;
+  }
+}
+
+.user-filter__feature--lvl .user-filter__list {
+  @media (min-width: $breakpoint-tablet) {
+    width: 490px;
+  }
+}
+
+/* Элемент списка */
+.user-filter__item {
+  margin-bottom: 12px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 150px;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+}
+
+.user-filter__item:last-child {
+  margin-bottom: 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-right: 0;
+  }
+}
+
+.user-filter__item .check__box {
+  @media (min-width: $breakpoint-tablet) {
+    margin-right: 12px;
+  }
+}
+
+/* Элемент списка уровень */
+.user-filter__level {
+  @media (min-width: $breakpoint-tablet) {
+    width: 488px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 100%;
+  }
+}
+
+/* Кнопка показать */
+.user-filter__button {
+  width: 230px;
+  margin-left: -5px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 100%;
+    margin-left: 0;
+    padding: 12px 15px 8px;
+  }
+}

@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Индикатор уровня пользователя
+   ========================================================================== */
+
+.level-module {
+  position: relative;
+
+  width: 60px;
+  height: 60px;
+
+  color: $white-color;
+
+  background-color: rgba($black-color, 0.6);
+  border-radius: 50%;
+}
+
+/* Выводит уровень пользователя */
+.level-module::before {
+  content: attr(data-level);
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  z-index: 2;
+
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+
+  transform: translateX(-50%);
+}
+
+/* Индикатор уровня */
+.level-module__svg {
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 60px;
+  height: 60px;
+
+  transform: rotate(-83deg);
+}
+
+/* Для пользователя Демин */
+.level-module__svg--demin {
+  stroke-dasharray: 374;
+  stroke-dashoffset: 80;
+}
+
+/* Для пользователя Фирсова */
+.level-module__svg--firsova {
+  stroke-dasharray: 360;
+  stroke-dashoffset: 16;
+}
+
+/* Для пользователя Смолов */
+.level-module__svg--smolov {
+  stroke-dasharray: 374;
+  stroke-dashoffset: 276;
+}
+
+/* Для пользователя Рогова */
+.level-module__svg--rogova {
+  stroke-dasharray: 374;
+  stroke-dashoffset: 187;
+}
+
+/* Круг индикатора */
+.level-module__svg circle {
+  stroke: $orange-color;
+  stroke-width: 3px;
+}
+
+/* Подпись к уровню */
+.level-module__text {
+  position: absolute;
+  bottom: 9px;
+  left: 50%;
+
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: normal;
+
+  transform: translateX(-50%);
+}
+
+/* Декоративная линия к подписи */
+.level-module__text::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+
+  width: 31px;
+  height: 1px;
+
+  background-color: rgba($white-color, 0.3);
+}

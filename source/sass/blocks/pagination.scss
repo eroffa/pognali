@@ -1,0 +1,162 @@
+/* ==========================================================================
+   Пагинация
+   ========================================================================== */
+
+.pagination {
+  box-sizing: border-box;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 35px 25px 28px;
+
+    color: $blue-color--dark;
+
+    background-color: $white-color;
+    border-radius: 20px;
+  }
+}
+
+/* Список пагинации */
+.pagination__number {
+  display: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    @include reset-ul;
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;
+  }
+}
+
+/* Элементы пагинации */
+.pagination__number-item {
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    color: $blue-color--dark;
+  }
+}
+
+/* Ссылка пагинации */
+.pagination__number-link {
+  &:hover,
+  &:focus {
+    color: rgba($black-color, 0.6);
+  }
+
+  &--active,
+  &:not([href]) {
+    background-color: $yellow-color;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+
+    color: $blue-color--dark;
+    text-decoration: none;
+
+    border-radius: 50%;
+  }
+}
+
+/* Обертка стрелок */
+.pagination__arrow {
+  @include reset-ul;
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 56px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 65px;
+  }
+}
+
+/* Стрелки вперед назад */
+.pagination__arrow-left,
+.pagination__arrow-right {
+  height: 50px;
+
+  text-align: center;
+
+  background-color: $white-color;
+  cursor: pointer;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    justify-content: space-between;
+    width: 53px;
+  }
+}
+
+/* Стрелка назад */
+.pagination__arrow-left {
+  width: 135px;
+  border-radius: 20px 0 0 20px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 11px;
+  }
+}
+
+/* Стрелка вперед */
+.pagination__arrow-right {
+  width: 134px;
+  border-radius: 0 20px 20px 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 11px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 20px;
+  }
+}
+
+/* Ссылки */
+.pagination__arrow-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+/* Иконка */
+.pagination__arrow-svg {
+  width: 10px;
+  height: 20px;
+
+  fill: $blue-color;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 14px;
+  }
+}
+
+/* Разное состояние иконок */
+.pagination__arrow-link:hover .pagination__arrow-svg,
+.pagination__arrow-link:focus .pagination__arrow-svg {
+  fill: rgba($blue-color, 0.6);
+}
+
+.pagination__arrow-link:active .pagination__arrow-svg {
+  fill: rgba($blue-color, 0.3);
+}

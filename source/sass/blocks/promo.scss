@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Промо секция
+   ========================================================================== */
+
+.promo {
+  padding-top: 15px;
+  padding-bottom: 30px;
+
+  color: $white-color;
+  background-color: $blue-color--dark;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 27px;
+    padding-bottom: 0;
+
+    background-color: $blue-color--light2;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 0;
+    padding-top: 0;
+
+    background-color: $blue-color--dark;
+    background-image: url("../img/desktop/globe-back-desktop@1x.jpg");
+    background-repeat: no-repeat;
+    background-size: 1800px 750px;
+    background-position: 53px -98px;
+
+    @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+      background-image: url("../img/desktop/globe-back-desktop@2x.jpg");
+    }
+  }
+}
+
+/* Контейнер центровщик */
+.promo__container {
+  position: relative;
+  z-index: 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    min-height: 850px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    display: flex;
+    align-items: flex-start;
+    min-height: 561px;
+    padding-top: 107px;
+  }
+}
+
+/* Фон секции */
+.promo__container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 100%;
+  height: 387px;
+
+  background-image: url("../img/mobile/traveller-illustration-mobile@1x.png"), url("../img/mobile/globe-back-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: 79px 132px, 0 -91px;
+  background-size: 192px auto, 320px auto;
+
+  @media (min-resolution: $retina-dpi),
+    (min-resolution: $retina-dppx) {
+    background-image: url("../img/mobile/traveller-illustration-mobile@2x.png"), url("../img/mobile/globe-back-mobile@2x.jpg");
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 100%;
+
+    background-image: url("../img/tablet/traveller-illustration-tablet@1x.png"), url("../img/tablet/globe-back-tablet@1x.jpg");
+    background-position: 284px 245px, center 223px;
+    background-size: 372px auto, 1479px auto;
+
+    @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+      background-image: url("../img/tablet/traveller-illustration-tablet@2x.png"), url("../img/tablet/globe-back-tablet@2x.jpg");
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    background-image: url("../img/desktop/traveller-illustration-desktop@1x.png");
+    background-size: 431px auto;
+    background-position: 604px 12px;
+
+    @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+      background-image: url("../img/desktop/traveller-illustration-desktop@2x.png");
+    }
+  }
+}
+
+/* Обертка */
+.promo__wrapp {
+  box-sizing: border-box;
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 285px;
+    margin-top: 12px;
+    margin-left: auto;
+  }
+}
+
+/* Заголовок секции */
+.promo__title {
+  margin: 0;
+  margin-bottom: 247px;
+  padding: 0 16px;
+
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+  color: $white-color;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 88px;
+    padding: 0 145px;
+
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 395px;
+    margin-bottom: 0;
+    padding: 0;
+    padding-left: 68px;
+
+    text-align: left;
+  }
+}
+
+.promo__list {
+  margin-bottom: 26px;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+/* Информационный блок */
+.promo__page-info {
+  padding-left: 25px;
+  padding-right: 90px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-left: 35px;
+    padding-right: 390px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 0;
+  }
+}

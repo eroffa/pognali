@@ -1,0 +1,359 @@
+/* ==========================================================================
+   Секция направления
+   ========================================================================== */
+
+.direction {
+  position: relative;
+  z-index: 8;
+
+  margin-top: -30px;
+  padding-top: 100px;
+  padding-bottom: 30px;
+
+  background-color: $white-color--blue;
+  border-radius: 0 0 30px 30px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: -50px;
+    padding-top: 120px;
+    padding-bottom: 79px;
+
+    border-radius: 0 0 60px 60px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 0;
+  }
+}
+
+/* Контейнер центровщик */
+.direction__container {
+  @media (min-width: $breakpoint-tablet) {
+    background-image: url("../img/flags-back@1x.png");
+    background-repeat: no-repeat;
+    background-size: 289px auto;
+    background-position: 440px 10px;
+
+    @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+      background-image: url("../img/flags-back@2x.png");
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-top: 213px;
+    padding-bottom: 133px;
+
+    background-position: 1090px 138px;
+  }
+}
+
+/* Обертка */
+.direction__wrapp {
+  box-sizing: border-box;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0 35px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0 70px;
+  }
+}
+
+/* Информационный блок */
+.direction__page-info {
+  margin-bottom: 60px;
+  padding-left: 25px;
+  padding-right: 50px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 350px;
+    margin-bottom: 108px;
+    padding: 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    order: 1;
+    margin-left: 170px;
+    margin-bottom: 16%;
+    padding: 0;
+  }
+}
+
+/* Список направлений */
+.direction__list {
+  @include reset-ul;
+  position: relative;
+
+  box-sizing: border-box;
+  margin-bottom: 25px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 47px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 560px;
+    margin-bottom: 0;
+  }
+}
+
+/* Декоративные элементы */
+.direction__list::before,
+.direction__list::after {
+  content: "";
+  position: absolute;
+}
+
+/* Квадрат */
+.direction__list::before {
+  @media (min-width: $breakpoint-tablet) {
+    top: -40px;
+    left: -35px;
+
+    width: 141px;
+    height: 141px;
+
+    background-color: #e2e5f2;
+    border-radius: 20px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    top: -70px;
+    left: -70px;
+  }
+}
+
+/* Засветление */
+.direction__list::after {
+  bottom: 0;
+
+  width: 100%;
+  height: 81px;
+
+  background-image: linear-gradient(to bottom, rgba($white-color, 0.3), $white-color--blue);
+}
+
+/* Направление */
+.direction__item {
+  margin-bottom: 10px;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+  }
+}
+
+/* Миниатюра страны */
+.direction__thumb {
+  position: relative;
+
+  width: 270px;
+  height: 110px;
+  margin: 0;
+
+  line-height: 0;
+
+  background-color: $white-color--dark;
+  border-radius: 10px 10px 0 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 186px;
+    height: 140px;
+
+    border-radius: 0 20px 20px 0;
+  }
+}
+
+/* Картинка миниатюры страны */
+.direction__thumb-img {
+  width: 270px;
+  height: 110px;
+  border-radius: 10px 10px 0 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 186px;
+    height: 140px;
+
+    border-radius: 0 20px 20px 0;
+  }
+}
+
+/* Тултип */
+.direction__thumb-tooltip {
+  position: absolute;
+  z-index: 1;
+  left: 25px;
+  bottom: -2px;
+
+  margin: 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    top: 15px;
+    left: -35px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    top: 23px;
+  }
+}
+
+/* Флаг страны */
+.direction__thumb-flag {
+  width: 35px;
+  height: 24px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 70px;
+    height: 47px;
+  }
+}
+
+/* Контент направления */
+.direction__content {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: -10px;
+  padding: 21px 25px;
+
+  background-color: $white-color;
+  border-radius: 10px;
+
+  @media (min-width: $breakpoint-tablet) {
+    align-items: stretch;
+    order: -1;
+    flex-grow: 1;
+    width: 432px;
+    margin: 0;
+    padding: 28px 30px 20px;
+
+    border-radius: 20px 0 0 20px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 373px;
+    padding: 22px 31px 20px;
+  }
+}
+
+/* Название страны */
+.direction__title {
+  flex-grow: 1;
+  margin: 0;
+
+  font-size: 21px;
+  line-height: 21px;
+  font-weight: 700;
+  color: $blue-color--dark;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 100%;
+    margin-bottom: 5px;
+
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 3px;
+  }
+}
+
+/* Ссылка названия страны */
+.direction__title-link {
+  color: $blue-color--dark;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: rgba($blue-color--dark, 0.7);
+  }
+
+  &:active {
+    color: rgba($blue-color--dark, 0.3);
+  }
+}
+
+/* Количество пользователей */
+.direction__count {
+  position: relative;
+
+  padding-left: 20px;
+
+  font-size: $fz;
+  line-height: 30px;
+  font-weight: 500;
+  color: rgba($grey-color, 0.3);
+  text-align: right;
+
+  @media (min-width: $breakpoint-tablet) {
+    order: 3;
+    padding-left: 30px;
+
+    font-size: 20px;
+    text-align: left;
+  }
+}
+
+/* Иконка миниатюры пользователя */
+.direction__count::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 3px;
+
+  width: 11px;
+  height: 11px;
+
+  background-image: url("../img/icons/user.svg");
+  background-repeat: no-repeat;
+
+  @media (min-width: $breakpoint-tablet) {
+    top: 3px;
+
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    top: 4px;
+    left: 2px;
+  }
+}
+
+/* Описательный текст */
+.direction__text {
+  width: 100%;
+
+  font-size: $fz;
+  line-height: 18px;
+  font-weight: 500;
+  color: rgba($grey-color, 0.3);
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 25px;
+  }
+}
+
+/* Кнопка показать все */
+.direction__button {
+  width: 100%;
+
+  @media (min-width: $breakpoint-desktop) {
+    order: 2;
+    width: 274px;
+    margin-top: -7%;
+    margin-left: 62%;
+  }
+}

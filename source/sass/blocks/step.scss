@@ -1,0 +1,185 @@
+/* ==========================================================================
+   Инструкция пользования сервисом
+   ========================================================================== */
+
+.step {
+  padding-bottom: 40px;
+
+  color: $white-color--blue;
+
+  background-color: $blue-color;
+  background-image: linear-gradient(to bottom, $blue-color--dark 80px, $blue-color 80px, $blue-color 100%);
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: -155px;
+    padding-top: 0;
+    padding-bottom: 95px;
+
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, transparent 138px, $blue-color 138px, $blue-color 100%);
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-top: -245px;
+    padding: 0;
+  }
+}
+
+/* Список шагов */
+.step__list {
+  @include reset-ul;
+  box-sizing: border-box;
+  counter-reset: section;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/* Элементы шагов */
+.step__item {
+  position: relative;
+
+  margin-top: -15px;
+  padding: 23px 23px 36px 25px;
+
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+  color: $blue-color--dark;
+
+  background-color: $orange-color;
+  border-radius: 10px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  /* Каждый первый после каждых четырех */
+  &:nth-child(4n+1) {
+    background-color: $orange-color;
+  }
+
+  /* Каждый второй после каждых четырех */
+  &:nth-child(4n+2) {
+    background-color: $orange-color--light;
+  }
+
+  /* Каждый третий после каждых четырех */
+  &:nth-child(4n+3) {
+    background-color: $yellow-color--dark;
+  }
+
+  /* Каждый четвертый после каждых четырех */
+  &:nth-child(4n+4) {
+    background-color: $yellow-color;
+  }
+
+  &:last-child {
+    padding-bottom: 22px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 54.7%;
+    margin: 0;
+    padding: 29px 100px 63px 33px;
+
+    font-size: 24px;
+    line-height: 24px;
+
+    border-radius: 0;
+
+    /* Каждый четный элемент */
+    &:nth-child(2n) {
+      width: 50%;
+      margin-left: -4.7%;
+    }
+
+    /* Первые два элемента */
+    &:nth-child(-n+2) {
+      border-radius: 20px 20px 0 0;
+    }
+
+    /* Последние два элемента */
+    &:nth-last-child(-n+2) {
+      border-radius: 0 0 20px 20px;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 27px 100px 32px 35px;
+
+    &:nth-child(4n+1)::before,
+    &:nth-child(4n+2)::before,
+    &:nth-child(4n+3)::before {
+      right: 63px;
+      top: -20px;
+    }
+
+    /* Каждый элемент */
+    &:nth-child(n) {
+      border-radius: 20px;
+    }
+
+    /* Каждый элемент начиная со второго */
+    &:nth-child(n+2) {
+      margin-left: -32px;
+    }
+
+    /* Каждый первый элемент после каждого четвертого */
+    &:nth-child(4n+1) {
+      width: 344px;
+      margin-left: 0;
+    }
+
+    /* Каждый второй и третий элементы после каждого четвертого */
+    &:nth-child(4n+2),
+    &:nth-child(4n+3) {
+      width: 377px;
+    }
+
+    /* Каждый четвертый элемент после каждого четвертого */
+    &:nth-child(4n+4) {
+      width: 318px;
+    }
+  }
+}
+
+/* Счетчик */
+.step__item::before {
+  counter-increment: section;
+  content: counter(section);
+  position: absolute;
+  right: 20px;
+
+  color: $white-color;
+
+  @media (min-width: $breakpoint-tablet) {
+    top: 40px;
+    left: 34px;
+    right: auto;
+    bottom: 0;
+
+    font-size: 30px;
+    line-height: 120px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    top: -20px;
+    left: auto;
+    right: 33px;
+
+    font-size: 24px;
+  }
+}
+
+/* Текст */
+.step__text {
+  display: inline-block;
+  max-width: 143px;
+
+  @media (min-width: $breakpoint-tablet) {
+    max-width: 100%;
+  }
+}

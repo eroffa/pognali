@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Миксины
+   ========================================================================== */
+
+/* Подключает шрифт
+   ========================================================================== */
+@mixin font-face($font-family, $url, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: "#{$font-family}";
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+    src: url("#{$url}.eot");
+    src: url("#{$url}.eot?#iefix") format("embedded-opentype"),
+      url("#{$url}.woff2") format("woff2"),
+      url("#{$url}.woff") format("woff"),
+      url("#{$url}.ttf") format("truetype"),
+      url("#{$url}.svg") format("svg");
+  }
+}
+
+/* Сброс списков
+   ========================================================================== */
+@mixin reset-ul() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin visually-show() {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip: auto;
+  clip-path: none;
+  overflow: auto;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-ms-input-placeholder {
+    @content;
+  }
+
+  &::placeholder {
+    @content;
+  }
+}

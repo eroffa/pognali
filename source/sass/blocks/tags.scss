@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Тэги
+   ========================================================================== */
+
+/* Список тэгов */
+.tags {
+  @include reset-ul;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Тэг */
+.tags__item {
+  margin-right: 6px;
+
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: normal;
+  color: $grey-color;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-right: 8px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+/* Ссылка тэга */
+.tags__link {
+  color: $grey-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}

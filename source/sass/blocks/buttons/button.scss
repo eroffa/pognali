@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Кнопка простая
+   ========================================================================== */
+
+.button {
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  padding: 6px 15px 4px;
+
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 700;
+  color: $blue-color--dark;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  background-color: $yellow-color;
+  border: none;
+  border-radius: 20px;
+
+  cursor: pointer;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    background-color: $yellow-color--dark;
+  }
+
+  &:active {
+    color: rgba($blue-color--dark, 0.3);
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 20px;
+    line-height: 30px;
+
+    border-radius: 30px;
+  }
+}
+
+.button--white {
+  color: $blue-color--dark;
+  background-color: $white-color;
+
+  &:hover,
+  &:focus {
+    background-color: $white-color;
+    box-shadow: 0 6px 20px rgba($black-color, 0.08);
+  }
+
+  &:active {
+    color: rgba($blue-color--dark, 0.3);
+    background-color: #f3c72b;
+    box-shadow: none;
+  }
+}
+
+.button--grey {
+  background-color: #dfe3f0;
+
+  &:hover,
+  &:focus {
+    background-color: #d1d7e9;
+  }
+
+  &:active {
+    color: rgba($blue-color--light, 0.3);
+  }
+}
